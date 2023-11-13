@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Header from '../header/Header.jsx'
-import css from './layoutHome.jsx'
+import css from './layout.module.scss'
 import axios from 'axios'
 import { URL_POKEMON } from '../../../api/apiRest.js'
 import Card from '../cards/Card.jsx'
@@ -8,7 +8,6 @@ import Card from '../cards/Card.jsx'
 export default function LayoutHome() {
 
   const [arrayPokemon, setArrayPokemon] = useState([])
-  console.log(arrayPokemon)
 
   useEffect(() => {
     const api = async () => {
@@ -25,7 +24,7 @@ export default function LayoutHome() {
       
       <Header />
 
-      <div>
+      <div className={css.card_content}>
         {arrayPokemon.map((card, index) => {
           return <Card key={index} card={card} />;
         })}
