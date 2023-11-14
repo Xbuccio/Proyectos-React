@@ -7,6 +7,7 @@ export default function Card({ card }) {
 
   const [itemPokemon, setItemPokemon] = useState({})
   const [especiePokemon, setEspeciePokemon] = useState({})
+  const [evolucionesPokemon, setEvolucionesPokemon] = useState([])
 
   useEffect(() => {
     const dataPokemon = async () => {
@@ -33,34 +34,54 @@ export default function Card({ card }) {
     dataEspeciePokemon()
   }, [card])
 
-  useEffect(() => {
-    async function getPokemonImage(id) {
+   useEffect(() => {
+    async function getPokemonImagen(id) {
       const response = await axios.get(`${URL_POKEMON}/${id}`);
-      return response?.data?.sprites?.other["oficial-artwork"]?.front_default;
+      return response?.data?.sprites?.other["official-artwork"]?.front_default;
     }
 
     if (especiePokemon?.url_especie) {
-
       const getEvolution = async () => {
-        const arrayEvolutions = []
-        const URL = especiePokemon?.url_especie?.url.split('/')
-        const api = await axios.get(`${URL_EVOLUCIONES}/${URL[6]}`)
+        const arrayEvoluciones = [];
+        const URL = especiePokemon?.url_especie?.url.split("/");
+        const api = await axios.get(`${URL_EVOLUCIONES}/${URL[6]}`);
+        const URL2 = api?.data?.chain?.species?.url?.split("/");
+        const img1 = await getPokemonImagen(URL2[6]);
+        arrayEvoluciones.push({
+          img: img1,
+          name: api?.data?.chain?.species?.name,
+        });
 
-        const URL2 = api?.data?.chain?.species?.url.split('/')
-        const img1 = await getPokemonImage(URL2[6])
-        console.log(img1)
+        if (api?.data?.chain?.evolves_to?.length !== 0) {
+          const DATA2 = api?.data?.chain?.evolves_to[0]?.species;
+          const ID = DATA2?.url?.split("/");
+          const img2 = await getPokemonImagen(ID[6]);
 
-        arrayEvolutions.push({
+          arrayEvoluciones.push({
+            img: img2,
+            name: DATA2?.name,
+          });
 
-        })
+          if (api?.data?.chain.evolves_to[0].evolves_to.length !== 0) {
+            const DATA3 =
+              api?.data?.chain?.evolves_to[0]?.evolves_to[0]?.species;
+            const ID = DATA3?.url?.split("/");
+            const img3 = await getPokemonImagen(ID[6]);
 
-      }
-      getEvolution()
+            arrayEvoluciones.push({
+              img: img3,
+              name: DATA3?.name,
+            });
+          }
+        }
+
+        setEvolucionesPokemon(arrayEvoluciones);
+      };
+
+      getEvolution();
     }
-
-
-  }, [especiePokemon])
-
+  }, [especiePokemon]);
+   
 
   let pokeId = itemPokemon?.id?.toString();
   if (pokeId?.length === 1) {
@@ -96,11 +117,23 @@ export default function Card({ card }) {
         <div className={css.div_type_color}>
           {itemPokemon?.types?.map((ti, index) => {
             return <h6 key={index} className={`color-${ti.type.name} ${css.color_type}`}>
-              {" "}
-              {ti.type.name}{" "}
+              
+              {ti.type.name}
             </h6>
           })}
         </div>
+
+        <div className={css.div_evolucion}>
+          {evolucionesPokemon.map((evo, index) => {
+            return (
+              <div key={index} className={css.item_evo}>
+                <img src={evo.img} alt="evo" className={css.img} />
+                <h6> {evo.name} </h6>
+              </div>
+            );
+          })}
+        </div>
+
       </div>
     </div>
   )
