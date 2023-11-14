@@ -10,6 +10,7 @@ export default function LayoutHome() {
 
   const [arrayPokemon, setArrayPokemon] = useState([])
   const [globalPokemon, setGlobalPokemon] = useState([])
+  const [search, setSearch] = useState()
   const [xpage, setXpage] = useState(1)
 
   useEffect(() => {
@@ -38,10 +39,20 @@ export default function LayoutHome() {
     setGlobalPokemon(results)
   }
 
+  const filterPokemons = search?.length > 0 
+    ? globalPokemon?.filter(pokemon =>  pokemon?.name?.includes(search))
+    : arrayPokemon
+
+    const getSearch = (e) => {
+      const texto = e.toLowerCase()
+      setSearch(texto)
+      setXpage(1)
+    }
+
   return (
     <div className={css.layout}>
       
-      <Header />
+      <Header getSearch={getSearch}/>
 
       <section className={css.section_pagination}>
         <div className={css.div_pagination}>
@@ -57,7 +68,7 @@ export default function LayoutHome() {
             <FaIcons.FaAngleLeft />
           </span>
           <span className={css.item}> {xpage} </span>
-          <span className={css.item}> DE </span>
+          <span className={css.item}> of </span>
           <span className={css.item}> {Math.round(globalPokemon?.length / 15)} </span>
           <span 
             className={css.item_right}
@@ -74,7 +85,7 @@ export default function LayoutHome() {
       </section>
 
       <div className={css.card_content}>
-        {arrayPokemon.map((card, index) => {
+        {filterPokemons.map((card, index) => {
           return <Card key={index} card={card} />;
         })}
       </div>

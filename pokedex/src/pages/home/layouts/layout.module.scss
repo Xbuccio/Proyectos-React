@@ -1,4 +1,4 @@
- .card_content{
+ .card_content {
     width: 1400px;
     max-width: calc(100% - 30px);
     margin: 0 auto;
@@ -7,4 +7,46 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
     padding-bottom: 30px;
+ }
+
+ .section_pagination {
+    display: flex; 
+    justify-content: center;
+    margin: 40px 0;
+
+    .div_pagination {
+      width: auto;
+      display: flex;
+      border-radius: 8px;
+      background-color: rgb(111, 182, 230);
+      overflow: hidden;
+
+      .item_left {
+        background-color: rgb(111, 182, 230);
+        height: 30px;
+        width: 30px;
+        color: white;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+
+      .item {
+        height: 30px;
+        width: 40px;
+        color: white;
+        display: grid;
+        place-items: center;
+      }
+
+      .item_right {
+        background-color: rgb(111, 182, 230);
+        height: 30px;
+        width: 30px;
+        color: white;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+    }
  }
