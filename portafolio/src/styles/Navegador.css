@@ -1,0 +1,35 @@
+nav {
+  height: 50px;
+  z-index: 111;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navItems {
+  padding: 0;
+  display: flex; 
+}
+
+#nav1 {
+  margin-right: auto; 
+}
+#nav2 {
+  margin-left: auto; 
+}
+
+.navItems button {
+  font-size: 10px;
+  color: var(--principal-1);
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+#button{
+  border: solid;
+  position: relative;
+  top: 20px;
+}
