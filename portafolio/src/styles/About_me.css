@@ -2,6 +2,10 @@
   padding: 0 20px; 
 }
 
+h3{
+  font-weight: 600;
+}
+
 .about_me_p{
   padding: 0 40px;
 }
@@ -33,14 +37,15 @@
 }
 
 .about_me_span {
-  background-color: rgb(255, 225, 0);
+  background-color: var(--principal-2);
+  color: black;
   border-radius: 30px;
   padding: 5px 20px;
   font: bold;
 }
 
 .about_me_span2 {
-  color:  rgb(230, 195, 0);
+  color: var(--principal-2);
   font-weight: bold;
   font: bold;
   font-size: 20px;
@@ -58,3 +63,33 @@
   transition: transform 0.3s;
 }
 
+.about_me_barra::after {
+  content: "";
+  height: 2px;
+  width: 15px;
+  background-color: var(--principal-2);
+  display: inline-table;
+  margin: 10px 3px ;
+}
+
+.about_me_exp{
+  display: flex;
+}
+
+.about_me_exp div{
+  width: 50%;
+  padding: 10px;
+}
+
+.about_me_exp div:first-child{
+  display: block;
+  unicode-bidi: isolate;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-right: inset 1px #33333399;
+}
+
+.dark-theme .about_me_exp div:first-child {
+  border-right: inset 1px #ffffffd5 ; /* o el color que desees para los iconos en modo oscuro */
+}

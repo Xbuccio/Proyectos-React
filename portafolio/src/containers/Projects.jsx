@@ -8,8 +8,7 @@ function Projects() {
       <div className="projects-grid">
         <div className="myCard">
           <div className="innerCard">
-            <div className="frontSide">
-              <p className="title">Spotify Clon</p>
+            <div className="frontSide card1-front">
               <p>Hover Me</p>
             </div>
             <div className="backSide">
@@ -22,8 +21,7 @@ function Projects() {
 
         <div className="myCard">
           <div className="innerCard">
-            <div className="frontSide">
-              <p className="title">Pokedex</p>
+            <div className="frontSide card2-front">
               <p>Hover Me</p>
             </div>
             <div className="backSide">
@@ -36,8 +34,7 @@ function Projects() {
 
         <div className="myCard">
           <div className="innerCard">
-            <div className="frontSide">
-              <p className="title">Galeria de Juegos</p>
+            <div className="frontSide card3-front">
               <p>Hover Me</p>
             </div>
             <div className="backSide">
@@ -49,8 +46,7 @@ function Projects() {
 
         <div className="myCard">
           <div className="innerCard">
-            <div className="frontSide">
-              <p className="title"></p>
+            <div className="frontSide card4-front">
               <p>Hover Me</p>
             </div>
             <div className="backSide">

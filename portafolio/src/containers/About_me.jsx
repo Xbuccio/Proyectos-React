@@ -15,34 +15,36 @@ function About_Me() {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius quas repudiandae eaque voluptatibus! Reprehenderit minima, iusto harum sint porro soluta ut nihil tenetur velit, quos voluptas culpa officiis doloremque animi?
       </p>
       <hr />
-      <div>
-        <h3>Experience</h3>
-        <ul className="about_me_list">
-          <li><span className="about_me_span">2022 - Today</span> Hospital Simplemente Evita</li>
-          <li><h4>System and Network Maintenance</h4></li>
-          <li><p>I solve any problems that may arise with the hospital s PCs, from hardware and software issues to network and database management.</p></li>
-        </ul>
+      <div className='about_me_exp'>
+        <div>
+          <h3 className='about_me_barra'>Experience</h3>
+          <ul className="about_me_list">
+            <li><span className="about_me_span">2022 - Today</span> Hospital Simplemente Evita</li>
+            <li><h4>System and Network Maintenance</h4></li>
+            <li><p>I solve any problems that may arise with the hospital s PCs, from hardware and software issues to network and database management.</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 className='about_me_barra'>Studies</h3>
+          <ul className="about_me_list">
+            <li><span className="about_me_span2">2021 - In progress</span></li>
+            <li><h4>Computer Engineering.</h4></li>
+            <li><p>Universidad Nacional de la Matanza</p></li>
+
+            <li><span className="about_me_span2">2020 - 2021</span></li>
+            <li><h4>Course in Fundamentos de la programacion</h4></li>
+            <li ><p>Universidad Tecnológica Nacional</p></li>
+
+            <li><span className="about_me_span2">2014 - 2019</span></li>
+            <li><h4>High School Diploma in Social Sciences.</h4></li>
+            <li><p>Colegio Hogar San Mauricio</p></li>
+          </ul>
+        </div>
+
       </div>
       <hr />
       <div>
-        <h3>Studies</h3>
-        <ul className="about_me_list">
-          <li><span className="about_me_span2">2021 - In progress</span></li>
-          <li><h4>Computer Engineering.</h4></li>
-          <li><p>Universidad Nacional de la Matanza</p></li>
-
-          <li><span className="about_me_span2">2020 - 2021</span></li>
-          <li><h4>Course in Fundamentos de la programacion</h4></li>
-          <li ><p>Universidad Tecnológica Nacional</p></li>
-
-          <li><span className="about_me_span2">2014 - 2019</span></li>
-          <li><h4>High School Diploma in Social Sciences.</h4></li>
-          <li><p>Colegio Hogar San Mauricio</p></li>
-        </ul>
-      </div>
-      <hr />
-      <div>
-        <h3>Tecnologies</h3>
+        <h3 className='about_me_barra'>Tecnologies</h3>
         <ul className="about_me_list_icons">
           <li>
             <HTML5Icon />
@@ -60,16 +62,16 @@ function About_Me() {
             <ReactIcon />
           </li>
           <li>
-            <Tailwindcss />
+            <NodeJs />
           </li>
           <li>
             <Astro />
           </li>
           <li>
-            <Vite />
+            <Python />
           </li>
           <li>
-            <NodeJs />
+            <Tailwindcss />
           </li>
           <li>
             <Sass />
@@ -78,7 +80,7 @@ function About_Me() {
             <Figma />
           </li>
           <li>
-            <Python />
+            <Vite />
           </li>
         </ul>
       </div>

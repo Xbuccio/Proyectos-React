@@ -53,3 +53,11 @@ h1 {
   white-space: nowrap;
   border-right: 4px solid;
 }
+
+.dark-theme .topline {
+  color: #fff; 
+}
+
+.dark-theme .im {
+  color: #fff; 
+}

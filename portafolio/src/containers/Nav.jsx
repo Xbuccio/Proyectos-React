@@ -4,7 +4,10 @@ import githubIcon from '@iconify-icons/mdi/github';
 import linkedinIcon from '@iconify-icons/fa-brands/linkedin';
 import "../styles/Navegador.css"
 
-function Navegador() {
+
+function Navegador({ cambiarTema }) {
+
+
   return (
     <nav>
       <div className="navItems" id="nav1">
@@ -21,13 +24,8 @@ function Navegador() {
       </div>
 
       <div className="navItems" id="nav2">
-        <Dark />
+        <Dark cambiarTema={cambiarTema}/>
       </div>
-      
-      {/**<Accordion
-              cambiarIdiomaEs={cambiarIdiomaEs} cambiarIdiomaNa={cambiarIdiomaNa}
-              cambiarColor1={cambiarColor1} cambiarColor2={cambiarColor2}
-      />*/}
     </nav>
   )
 }

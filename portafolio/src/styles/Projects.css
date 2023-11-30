@@ -4,16 +4,29 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  
+}
+
+.project h1 {
+  margin-bottom: 100px;
+}
+
+.frontSide p {
+  background-color: var(--principal-2);
+  padding: 5px 10px;
+  border-radius: 50px;
+  color: black;
+  position: relative;
+  top: 70px;
 }
 
 .projects-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(3, 100px); 
+  width: 100%;
   align-items: center;
   justify-content: center;
-  height: 60vh;
-  margin: 100px;
   column-gap: 50px;
   row-gap: 200px;
 }
@@ -53,8 +66,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 254px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -64,8 +77,26 @@
   font-weight: 700;
 }
 
-.frontSide,
-.frontSide::before {
+.card1-front,
+.card1-front::before {
+  background-image: url('../img/spotify-clon.png');
+  background-size: cover;
+}
+
+.card2-front,
+.card2-front::before {
+  background-image: url('../img/pokedex.png');
+  background-size: cover;
+}
+
+.card3-front,
+.card3-front::before {
+  background-image: url('https://images.pexels.com/photos/19049977/pexels-photo-19049977/free-photo-of-mar-hombre-saludar-surfero.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+}
+
+.card4-front,
+.card4-front::before {
   background-image: url('https://images.pexels.com/photos/19049977/pexels-photo-19049977/free-photo-of-mar-hombre-saludar-surfero.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-size: cover;
 }
@@ -79,7 +110,6 @@
   transform: rotateY(180deg);
 }
 
-
 @keyframes animate {
   0% {
     opacity: 0.3;
@@ -91,5 +121,12 @@
 
   100% {
     opacity: 0.3;
+  }
+}
+
+@media (max-width: 950px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Cambia a una columna en dispositivos más pequeños */
+    grid-template-rows: repeat(6, 100px); /* Ajusta el número de filas */
   }
 }

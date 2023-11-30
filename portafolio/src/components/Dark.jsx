@@ -1,9 +1,22 @@
+import { useContext } from "react";
+import BackgroundContext from "../components/BackgroundContext";
 import "../styles/Dark.css"
 
 function Dark() {
+  const { tematic, cambiarTema } = useContext(BackgroundContext);
+
+  const handleThemeChange = () => {
+    cambiarTema();
+  };
+
   return (
     <label className="theme-switch">
-      <input type="checkbox" className="theme-switch__checkbox" />
+      <input 
+        type="checkbox" 
+        className="theme-switch__checkbox"
+        checked={tematic}
+        onChange={handleThemeChange}
+      />
       <div className="theme-switch__container">
         <div className="theme-switch__clouds"></div>
         <div className="theme-switch__stars-container">

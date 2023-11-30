@@ -75,7 +75,12 @@ body {
   flex-grow: 1;
 }
 
-.container2 {
-  width: 65vw;
-  flex-grow: 1;
+
+.dark-theme{
+  color: var(--principal-3);
+  background-color: var(--fondo-2);
+}
+
+.dark-theme h1{
+  color: var(--principal-3);
 }
