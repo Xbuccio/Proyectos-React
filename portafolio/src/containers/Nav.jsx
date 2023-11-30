@@ -2,7 +2,6 @@ import Dark from "../components/Dark";
 import { Icon } from '@iconify/react';
 import githubIcon from '@iconify-icons/mdi/github';
 import linkedinIcon from '@iconify-icons/fa-brands/linkedin';
-import shareBoldIcon from '@iconify-icons/solar/share-bold';
 import "../styles/Navegador.css"
 
 function Navegador() {
@@ -16,7 +15,7 @@ function Navegador() {
           <Icon icon={linkedinIcon} width="40" height="40"/>
         </a>
         <a href="" target="_blank" rel="noopener noreferrer">
-          <Icon icon={shareBoldIcon} width="40" height="40"/>
+          <Icon icon="fa-brands:discord" width="40" height="40" />
         </a>
        
       </div>
