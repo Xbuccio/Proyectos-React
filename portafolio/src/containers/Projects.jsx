@@ -29,7 +29,7 @@ function Projects() {
             <div className="backSide">
               <p className="title">Pokedex</p>
               <p>Desde la primera hasta la ultima generacion, estan todos!</p>
-              <a href="">Go it!</a>
+              <a href="../">Go it!</a>
             </div>
           </div>
         </div>
