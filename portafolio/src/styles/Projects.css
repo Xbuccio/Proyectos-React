@@ -103,7 +103,7 @@
 
 .backSide,
 .backSide::before {
-  background: rgb(137, 137, 137)
+  background: rgb(67, 67, 67)
 }
 
 .backSide {
@@ -129,4 +129,12 @@
     grid-template-columns: 1fr; /* Cambia a una columna en dispositivos más pequeños */
     grid-template-rows: repeat(6, 100px); /* Ajusta el número de filas */
   }
+}
+
+.dark-theme .target-font {
+  color: black;
+}
+
+.dark-theme .backSide {
+  background: rgb(243, 243, 243)
 }
