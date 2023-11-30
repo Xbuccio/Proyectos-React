@@ -30,8 +30,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 99vw;
   margin: 0;
+}
+
+.downOutline{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+#downOutline1{
+  position: relative;
+  animation: moveDown1 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveDown1 {
+  from {
+    top: -10px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+
+#downOutline2{
+  position: relative;
+  top: -50px;
+  animation: moveDown2 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveDown2 {
+  from {
+    top: -40px;
+  }
+
+  to {
+    top: -30px;
+  }
 }
 
 .container {
