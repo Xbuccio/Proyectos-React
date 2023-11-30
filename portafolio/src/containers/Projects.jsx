@@ -9,12 +9,13 @@ function Projects() {
         <div className="myCard">
           <div className="innerCard">
             <div className="frontSide">
-              <p className="title">FRONT SIDE</p>
+              <p className="title">Spotify Clon</p>
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">BACK SIDE</p>
-              <p>Leave Me</p>
+              <p className="title">Spotify Clon</p>
+              <p>Una version propia del famoso reproductor musical</p>
+              <a href="">Go it!</a>
             </div>
           </div>
         </div>
@@ -22,12 +23,13 @@ function Projects() {
         <div className="myCard">
           <div className="innerCard">
             <div className="frontSide">
-              <p className="title">FRONT SIDE</p>
+              <p className="title">Pokedex</p>
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">BACK SIDE</p>
-              <p>Leave Me</p>
+              <p className="title">Pokedex</p>
+              <p>Desde la primera hasta la ultima generacion, estan todos!</p>
+              <a href="">Go it!</a>
             </div>
           </div>
         </div>
@@ -35,12 +37,12 @@ function Projects() {
         <div className="myCard">
           <div className="innerCard">
             <div className="frontSide">
-              <p className="title">FRONT SIDE</p>
+              <p className="title">Galeria de Juegos</p>
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">BACK SIDE</p>
-              <p>Leave Me</p>
+              <p className="title">Galeria de Juegos</p>
+              <a href="">Go it!</a>
             </div>
           </div>
         </div>
@@ -48,12 +50,12 @@ function Projects() {
         <div className="myCard">
           <div className="innerCard">
             <div className="frontSide">
-              <p className="title">FRONT SIDE</p>
+              <p className="title"></p>
               <p>Hover Me</p>
             </div>
             <div className="backSide">
               <p className="title">BACK SIDE</p>
-              <p>Leave Me</p>
+              <a href="">Go it!</a>
             </div>
           </div>
         </div>

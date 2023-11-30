@@ -39,7 +39,7 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 .myCard:hover .innerCard {
@@ -66,12 +66,13 @@
 
 .frontSide,
 .frontSide::before {
-  background: rgb(59, 53, 53);
+  background-image: url('https://images.pexels.com/photos/19049977/pexels-photo-19049977/free-photo-of-mar-hombre-saludar-surfero.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
 }
 
 .backSide,
 .backSide::before {
-  background: rgb(27, 17, 17);
+  background: rgb(137, 137, 137)
 }
 
 .backSide {
