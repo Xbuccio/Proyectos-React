@@ -1,51 +1,45 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Icon } from '@iconify/react';
 import downOutlineIcon from '@iconify-icons/teenyicons/down-outline';
-import Navegador from "./containers/nav"
+import Navegador from "./containers/Nav"
 import Wrapper from "./containers/Wrapper"
 import About_Me from "./containers/About_me"
 import Projects from "./containers/Projects";
+import BackgroundContext from "./components/BackgroundContext";
 import "./styles/Main.css"
 
 function Portfolio() {
-  const [es, na] = useState(null)
-  const [color1, color2] = useState(null)
+  const [tematic, setTematic] = useState(false)
 
-  const cambiarIdiomaEs = () => {
-    na('A')
-  }
+  const cambiarTema = () => {
+    setTematic((prevTematic) => !prevTematic);
+  };
 
-  const cambiarIdiomaNa = () => {
-    na('B')
-  }
-
-  const cambiarColor1 = () => {
-    color2('1')
-  }
-
-  const cambiarColor2 = () => {
-    color2('2')
-  }
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark-theme", tematic);
+    document.body.classList.toggle("dark-theme", tematic);
+  }, [tematic]);
+  
 
   return (
-    <>
-      <main className={color1 === '2' ? "container" : "container2"}>
+    <BackgroundContext.Provider value={{ tematic, cambiarTema }}>
+      <main className="container">
         
-        <Navegador es={es}/>
+        <Navegador />
 
-        <Wrapper es={es} />
+        <Wrapper  />
 
         <div className="downOutline">
           <Icon id="downOutline1" icon={downOutlineIcon} height={50}/>
           <Icon id="downOutline2" icon={downOutlineIcon} height={50}/>
         </div>
         
-        <About_Me es={es} />
+        <About_Me  />
 
         <Projects />
 
       </main>
-    </>
+    </BackgroundContext.Provider>
   );
 }
 
