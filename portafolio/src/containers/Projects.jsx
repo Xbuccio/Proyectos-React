@@ -12,8 +12,8 @@ function Projects() {
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">Spotify Clon</p>
-              <p>Una version propia del famoso reproductor musical</p>
+              <p className="title target-font">Spotify Clon</p>
+              <p className="target-font">Una version propia del famoso reproductor musical</p>
               <a href="">Go it!</a>
             </div>
           </div>
@@ -25,8 +25,8 @@ function Projects() {
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">Pokedex</p>
-              <p>Desde la primera hasta la ultima generacion, estan todos!</p>
+              <p className="title target-font">Pokedex</p>
+              <p className="target-font">Desde la primera hasta la ultima generacion, estan todos!</p>
               <a href="../">Go it!</a>
             </div>
           </div>
@@ -38,7 +38,8 @@ function Projects() {
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">Galeria de Juegos</p>
+              <p className="title target-font">Galeria de Juegos</p>
+              <p className="target-font">TaTeTi, 4 en linea y mas!</p>
               <a href="">Go it!</a>
             </div>
           </div>
@@ -50,7 +51,8 @@ function Projects() {
               <p>Hover Me</p>
             </div>
             <div className="backSide">
-              <p className="title">BACK SIDE</p>
+              <p className="title target-font">BACK SIDE</p>
+              <p className="target-font">TaTeTi, 4 en linea y mas!</p>
               <a href="">Go it!</a>
             </div>
           </div>
