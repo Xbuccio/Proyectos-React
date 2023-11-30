@@ -1,5 +1,5 @@
 nav {
-  height: 50px;
+  height: 70px;
   z-index: 111;
   position: sticky;
   top: 0px;
@@ -9,7 +9,7 @@ nav {
 }
 
 .navItems {
-  padding: 0;
+  padding: 0px;
   display: flex; 
 }
 
@@ -32,4 +32,12 @@ nav {
   border: solid;
   position: relative;
   top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333; 
+  font-weight: bold; 
+  margin-right: 5px;
+  margin-left: 5px;
 }

@@ -10,11 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-icons/solar": "^1.2.3",
+    "@iconify-icons/teenyicons": "^1.2.4",
     "iconify": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@iconify-icons/fa-brands": "^1.2.4",
+    "@iconify-icons/mdi": "^1.2.48",
+    "@iconify/react": "^4.1.1",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react-swc": "^3.5.0",
