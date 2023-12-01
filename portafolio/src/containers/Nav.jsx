@@ -2,10 +2,11 @@ import Dark from "../components/Dark";
 import { Icon } from '@iconify/react';
 import githubIcon from '@iconify-icons/mdi/github';
 import linkedinIcon from '@iconify-icons/fa-brands/linkedin';
+import LanguageButton from "../components/LanguageButton";
 import "../styles/Navegador.css"
 
 
-function Navegador({ cambiarTema }) {
+function Navegador({ cambiarTema, changeLanguage }) {
 
 
   return (
@@ -24,6 +25,7 @@ function Navegador({ cambiarTema }) {
       </div>
 
       <div className="navItems" id="nav2">
+        <LanguageButton changeLanguage={changeLanguage} />
         <Dark cambiarTema={cambiarTema}/>
       </div>
     </nav>

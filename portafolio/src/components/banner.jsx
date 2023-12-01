@@ -4,10 +4,10 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300); // Ajusta este valor según la velocidad deseada
+  const [delta, setDelta] = useState(150); // Ajusta este valor según la velocidad deseada
   const [index, setIndex] = useState(1);
   const toRotate = ["Developer", "Designer", "Frontend!"];
-  const period = 3000;
+  const period = 1000;
 
   useEffect(() => {
     let startTime = null;
@@ -45,7 +45,7 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(300);
+      setDelta(150);
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -56,14 +56,14 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(250);
     } else {
       setIndex((prevIndex) => prevIndex + 1);
     }
   };
 
   return (
-    <span className="txt-rotate multitext" data-rotate='["Developer!", "Designer!", "Frontend!"]'>
+    <span className="txt-rotate multitext" data-rotate='["Developer!", "Designer!", "Frontend"]'>
       <span className="wrap">{text}</span>
     </span>
   );

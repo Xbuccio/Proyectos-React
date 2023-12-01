@@ -1,18 +1,22 @@
+import { useContext } from "react";
 import { Banner } from "../components/banner"
+import LanguageContext from "../components/LanguageContext";
 import "../styles/Wrapper.css"
 
-function Wrapper({ es }) {
+function Wrapper() {
+  const { language } = useContext(LanguageContext);
+
   return (
     <section className="wrapper">
       <div className="cols cols0">
-        <span className="topline barra">{es === 'B' ? 'Hola' : 'Hello'}</span>
+        <span className="topline barra">{language ? 'Hola' : 'Hello'}</span>
         <h1 className='cols-titulo'>
           <span className='im'>
-            {es === 'B' ? 'Soy' : 'Im'}
+            {language ? 'Soy' : 'Im'}
           </span>
           <Banner />
         </h1>
-        <p>{es === 'B' ? 'Ingeniero de Software' : 'Software Engineer'}</p>
+        <p>{language ? 'Ingeniero de Software' : 'Software Engineer'}</p>
       </div>
     </section>
   )
