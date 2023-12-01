@@ -1,0 +1,34 @@
+.language-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+ 
+}
+
+.language-button p{
+  width: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.dark-theme .language-button{
+  background-color: transparent;
+}
+
+.language{
+  height: 35px;
+  width: 35px;
+  margin-top: -3px;
+}
+
+.dark-theme .language{
+  color: white;
+}
+
+.dark-theme .language-button p{
+  color: white;
+}
