@@ -9,7 +9,7 @@ export default defineConfig({
   base: '/Proyectos-React/', // ajusta la base según tu estructura en GitHub Pages
   build: {
     rollupOptions: {
-      input: '/src/main.jsx', // ajusta la ruta según tu estructura
+      input: 'src/main.jsx', // ajusta la ruta según tu estructura, asegúrate de que sea relativa al directorio del proyecto
     },
   },
 });
