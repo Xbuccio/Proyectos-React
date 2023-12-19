@@ -1,4 +1,4 @@
-import LayoutHome from './pages/home/layouts/layoutHome.jsx'
+import LayoutHome from './pages/home/layouts/LayoutHome'
 
 
 function App() {
