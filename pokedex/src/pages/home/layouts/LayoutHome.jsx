@@ -40,7 +40,7 @@ export default function LayoutHome() {
   }
 
   const filterPokemons = search?.length > 0 
-    ? globalPokemon?.filter(pokemon =>  pokemon?.name?.includes(search))
+    ? globalPokemon?.filter(pokemon => pokemon?.name?.includes(search))
     : arrayPokemon
 
     const getSearch = (e) => {
