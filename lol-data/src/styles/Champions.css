@@ -1,0 +1,35 @@
+/* Champions.css */
+
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1300px;
+  margin: 10px auto; /* Ajusta según sea necesario */
+  padding-top: 20px;
+}
+
+.champions-image {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+  transition: tranform 0.3s ease-in-out;
+}
+
+.champions-image:hover{
+  
+}
+
+h3 {
+  margin-top: -40px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  background-color: rgb(52, 77, 77);
+  color: aliceblue;
+  padding: 10px;
+  position: relative;
+  
+}

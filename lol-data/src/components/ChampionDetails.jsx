@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { URL_CHAMPIONS_SKILL, URL_CHAMPIONS_SKILL_IMG, URL_CHAMPIONS_PASSIVE_IMG } from "../api/apiRest";
+import { URL_CHAMPIONS_SKILL, URL_CHAMPIONS_PASSIVE_IMG, URL_CHAMPIONS_SKILL_IMG} from "../api/apiRest";
+// 
 
-const ChampionDetails = ({ championName }) => {
+const ChampionDetails = ({ championID }) => {
   const [championSkills, setChampionSkills] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Obtener datos del campeón
-        const response = await fetch(`${URL_CHAMPIONS_SKILL}${championName}.json`);
+        const response = await fetch(`${URL_CHAMPIONS_SKILL}${championID}.json`);
+
 
         if (!response.ok) {
           throw new Error('Habilidades no disponibles');
@@ -23,39 +25,32 @@ const ChampionDetails = ({ championName }) => {
     };
 
     fetchData();
-  }, [championName]);
+  }, [championID]);
+
 
   return (
     <div>
-      {championSkills && championSkills.data[championName] && (
-        <h1>
-          <img
-            src={`${URL_CHAMPIONS_PASSIVE_IMG}${championName}_P.png`}
-            alt={`${championName} passive`}
-            style={{ marginRight: '10px' }}
-          />
-          {championName}
-        </h1>
-      )}
-
       <h2>Pasiva</h2>
       <ul>
-        {championSkills && championSkills.data[championName] && championSkills.data[championName].passive && (
-          <li key={championSkills.data[championName].passive.id}>
-            <h4>{championSkills.data[championName].passive.name}</h4>
-            <p>{championSkills.data[championName].passive.description}</p>
+        {championSkills && championSkills.data[championID] && championSkills.data[championID].passive && championSkills.data[championID].passive.image &&(
+          <li key={championSkills.data[championID].passive.id}>
+            <img 
+              src={`${URL_CHAMPIONS_PASSIVE_IMG}${championSkills.data[championID].passive.image.full}`}
+              alt="no se ve"
+            />
+            <h4>{championSkills.data[championID].passive.name}</h4>
+            <p>{championSkills.data[championID].passive.description}</p>
           </li>
         )}
       </ul>
 
       <h2>Habilidades</h2>
       <ul>
-        {championSkills && championSkills.data[championName] && championSkills.data[championName].spells.map((spell) => (
+        {championSkills && championSkills.data[championID] && championSkills.data[championID].spells.map((spell) => (
           <li key={spell.id}>
-            <img
-              src={`${URL_CHAMPIONS_PASSIVE_IMG}${championName}_P.png`}
-              alt={`${championName} passive`}
-              style={{ marginRight: '10px' }}
+            <img 
+              src={`${URL_CHAMPIONS_SKILL_IMG}${spell.image.full}`}
+              alt="no se ve"
             />
             <h4>{spell.name}</h4>
             <p>{spell.description}</p>
