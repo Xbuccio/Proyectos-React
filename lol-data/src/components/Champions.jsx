@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { URL_CHAMPIONS, URL_CHAMPIONS_IMAGE } from '../api/apiRest';
-import ChampionDetails from './ChampionDetails'; // Asegúrate de tener la ruta correcta
+import "../styles/Champions.css"
+//import ChampionDetails from './ChampionDetails'; // Asegúrate de tener la ruta correcta
 
-const Prueba = () => {
+const Champions = () => {
   const [championData, setChampionData] = useState(null);
 
   useEffect(() => {
@@ -26,24 +27,24 @@ const Prueba = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Champion Data</h1>
+    <>
+    <h1>sanjkafhukaf</h1>
       {championData ? (
-        <ul>
-          {Object.values(championData.data).slice(0, 10).map((champion) => (
-            <li key={champion.id}>
+        <div className='champions-grid'>
+          {Object.values(championData.data).slice(0, 50).map((champion) => (
+            <div key={champion.id} className='champion-item'>
+              <img src={URL_CHAMPIONS_IMAGE + champion.id + '_0.jpg'} alt="" className='champions-image' />
               <h3>{champion.name}</h3>
-              <p>{champion.title}</p>
-              <img src={URL_CHAMPIONS_IMAGE + champion.name + '_0.jpg'} alt="" />
-              <ChampionDetails championName={champion.name} />
-            </li>
+              {/* <ChampionDetails championID={champion.id} /> */}
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </>
   );
+  
 };
 
-export default Prueba;
+export default Champions;

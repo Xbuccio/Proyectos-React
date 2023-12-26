@@ -1,11 +1,12 @@
 //import Champions from "./components/Champions"
-import Prueba from "./components/prueba"
+import Champions from "./components/Champions"
+import "./styles/App.css"
 
 function App() {
 
   return (
     <>
-      <Prueba />
+      <Champions />
     </>
   )
 }
