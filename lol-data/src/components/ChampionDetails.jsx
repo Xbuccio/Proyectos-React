@@ -9,6 +9,7 @@ const ChampionDetails = ({ championID }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(`${URL_CHAMPIONS_SKILL}${championID}.json`);
+        console.log(championID)
 
         if (!response.ok) {
           throw new Error('Habilidades no disponibles');
