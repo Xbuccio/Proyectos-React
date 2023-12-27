@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { URL_CHAMPIONS, URL_CHAMPIONS_IMAGE } from '../api/apiRest';
-import ChampionDetails from './ChampionDetails'; // 
 import "../styles/Champions.css"
 
 const Champions = () => {
@@ -33,9 +32,9 @@ const Champions = () => {
     <>
       <h1>sanjkafhukaf</h1>
       {championData ? (
-        <div className='champions-grid'>
+        <span className='champions-grid'>
 
-          {Object.values(championData.data).slice(0, 50).map((champion) => (
+          {Object.values(championData.data).slice(0, 5).map((champion) => (
             <Link to={`/${champion.id}`} key={champion.id} className='a'>
               <div className='champion-item'>
                 <div className='champion-img-container'>
@@ -46,13 +45,12 @@ const Champions = () => {
             </Link>
           ))}
 
-        </div>
+        </span>
       ) : (
         <p>Loading...</p>
       )}
-      {championData && championData.data && championData.keys && (
-        <ChampionDetails championID={championData.data[championData.keys[0]].id} />
-      )}
+
+      
     </>
   );
 
