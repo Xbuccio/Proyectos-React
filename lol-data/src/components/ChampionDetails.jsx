@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { URL_CHAMPIONS_SKILL, URL_CHAMPIONS_PASSIVE_IMG, URL_CHAMPIONS_SKILL_IMG} from "../api/apiRest";
-// 
+import PropTypes from 'prop-types';
+import { URL_CHAMPIONS_SKILL, URL_CHAMPIONS_PASSIVE_IMG, URL_CHAMPIONS_SKILL_IMG } from "../api/apiRest";
 
 const ChampionDetails = ({ championID }) => {
   const [championSkills, setChampionSkills] = useState(null);
@@ -8,9 +8,7 @@ const ChampionDetails = ({ championID }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Obtener datos del campeón
         const response = await fetch(`${URL_CHAMPIONS_SKILL}${championID}.json`);
-
 
         if (!response.ok) {
           throw new Error('Habilidades no disponibles');
@@ -26,7 +24,6 @@ const ChampionDetails = ({ championID }) => {
 
     fetchData();
   }, [championID]);
-
 
   return (
     <div>
@@ -59,5 +56,10 @@ const ChampionDetails = ({ championID }) => {
       </ul>
     </div>
   );
-}
+};
+
+ChampionDetails.propTypes = {
+  championID: PropTypes.string.isRequired,
+};
+
 export default ChampionDetails;
