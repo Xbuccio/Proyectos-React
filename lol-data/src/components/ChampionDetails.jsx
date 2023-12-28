@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import PropTypes from 'prop-types';
 import { URL_CHAMPIONS_SKILL, URL_CHAMPIONS_PASSIVE_IMG, URL_CHAMPIONS_SKILL_IMG } from "../api/apiRest";
+import "../styles/ChampionsDetails.css"
+import ChampionInfo from "./ChampionInfo";
 
-const ChampionDetails = ({ championID }) => {
+const ChampionDetails = () => {
+
+  const { id } = useParams()
   const [championSkills, setChampionSkills] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${URL_CHAMPIONS_SKILL}${championID}.json`);
-        console.log(championID)
+        const response = await fetch(`${URL_CHAMPIONS_SKILL}${id}.json`);
 
         if (!response.ok) {
           throw new Error('Habilidades no disponibles');
@@ -24,43 +28,50 @@ const ChampionDetails = ({ championID }) => {
     };
 
     fetchData();
-  }, [championID]);
+  }, [id]);
 
   return (
-    <div>
-      <h2>Pasiva</h2>
-      <ul>
-        {championSkills && championSkills.data[championID] && championSkills.data[championID].passive && championSkills.data[championID].passive.image &&(
-          <li key={championSkills.data[championID].passive.id}>
-            <img 
-              src={`${URL_CHAMPIONS_PASSIVE_IMG}${championSkills.data[championID].passive.image.full}`}
-              alt="no se ve"
-            />
-            <h4>{championSkills.data[championID].passive.name}</h4>
-            <p>{championSkills.data[championID].passive.description}</p>
-          </li>
-        )}
-      </ul>
+    <div className="container-details">
+      <ChampionInfo championSkills={championSkills} id={id} />
 
-      <h2>Habilidades</h2>
-      <ul>
-        {championSkills && championSkills.data[championID] && championSkills.data[championID].spells.map((spell) => (
-          <li key={spell.id}>
-            <img 
-              src={`${URL_CHAMPIONS_SKILL_IMG}${spell.image.full}`}
-              alt="no se ve"
-            />
-            <h4>{spell.name}</h4>
-            <p>{spell.description}</p>
-          </li>
-        ))}
-      </ul>
+      <section>
+        <h2>Pasiva</h2>
+        <ul>
+          {championSkills && (
+            <li key={championSkills.data[id].passive.id}>
+              <img
+                src={`${URL_CHAMPIONS_PASSIVE_IMG}${championSkills.data[id].passive.image.full}`}
+                alt="no se ve"
+              />
+              <h4>{championSkills.data[id].passive.name}</h4>
+              <p>{championSkills.data[id].passive.description}</p>
+            </li>
+          )}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Habilidades</h2>
+        <ul>
+          {championSkills && championSkills.data[id].spells.map((spell) => (
+            <li key={spell.id}>
+              <img
+                src={`${URL_CHAMPIONS_SKILL_IMG}${spell.image.full}`}
+                alt="no se ve"
+              />
+              <h4>{spell.name}</h4>
+              <p>{spell.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
+
 };
 
 ChampionDetails.propTypes = {
-  championID: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ChampionDetails;

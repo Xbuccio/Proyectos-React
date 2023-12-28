@@ -26,15 +26,13 @@ const Champions = () => {
     fetchData();
   }, []);
 
-
-
   return (
     <>
       <h1>sanjkafhukaf</h1>
       {championData ? (
         <span className='champions-grid'>
 
-          {Object.values(championData.data).slice(0, 5).map((champion) => (
+          {Object.values(championData.data).slice(0, 15).map((champion) => (
             <Link to={`/${champion.id}`} key={champion.id} className='a'>
               <div className='champion-item'>
                 <div className='champion-img-container'>
@@ -49,8 +47,6 @@ const Champions = () => {
       ) : (
         <p>Loading...</p>
       )}
-
-      
     </>
   );
 
