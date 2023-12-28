@@ -1,0 +1,103 @@
+.container-details{
+  background-color: rgb(0, 9, 19);
+}
+
+.space{
+  width: 50px;
+  height: 15px;
+}
+
+.container-splash-inicio {
+  height: 710px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+}
+
+.container-splash-inicio::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%; /* Ajusta la altura del área difuminada según tus necesidades */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 9, 19, 1));
+  pointer-events: none;
+}
+
+.splash-inicio {
+  max-width: 100%;
+  height: auto;  
+}
+
+.container-resume {
+  position: relative;
+  top: -160px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.details-title {
+  font-size: 25px;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  margin-bottom: 0px; 
+}
+
+.details-name {
+  font-size: 100px;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1; 
+  background-color: rgba(0, 0, 0, 0);
+  display: inline; 
+  padding: 0 10px; 
+}
+
+.container-info {
+  position: relative;
+  width: 1000px;
+  /*border: solid 1px rgba(255, 255, 255, 0.2);*/
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-weight: 100;
+}
+
+.container-lore {
+  width: 50%;
+}
+
+.container-lore p {
+  position: relative;
+  margin: 0;
+  padding: 20px; 
+  text-align: start;
+  
+}
+
+.container-stats{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-stats ul{
+  list-style: none;
+}
+
+hr {
+  margin: 50px;
+  border: solid 1.1px rgba(255, 255, 255, 0.2);
+}
