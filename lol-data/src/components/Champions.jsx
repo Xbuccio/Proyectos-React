@@ -28,12 +28,13 @@ const Champions = () => {
 
   return (
     <>
-      <h1>sanjkafhukaf</h1>
+      <h1>Campeones</h1>
       {championData ? (
         <span className='champions-grid'>
 
-          {Object.values(championData.data).slice(0, 15).map((champion) => (
+          {Object.values(championData.data).slice(0, 100).map((champion) => (
             <Link to={`/${champion.id}`} key={champion.id} className='a'>
+              {console.log(champion.key)}
               <div className='champion-item'>
                 <div className='champion-img-container'>
                   <img src={URL_CHAMPIONS_IMAGE + champion.id + '_0.jpg'} alt="" className='champions-image' />

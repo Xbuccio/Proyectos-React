@@ -1,49 +1,80 @@
 import PropTypes from 'prop-types';
-import LuchadorIcon from '../icons/luchador.svg';
 import { URL_CHAMPIONS_SPLASH } from "../api/apiRest";
-import "../styles/ChampionsDetails.css";
+import "../styles/ChampionsInfo.css";
+import ChampionIcons from './ChampionsIcons';
+import { useState } from 'react';
 
 const ChampionInfo = ({ championSkills, id }) => {
+
+  const [more, setMore] = useState(true)
+
   if (!championSkills) {
-    return <p>Loading...</p>; // O cualquier otro indicador de carga
+    return <p>Loading...</p>;
   }
 
   const championInfo = championSkills.data[id];
 
+  const handleClick = () => {
+    setMore(!more)
+  }
+
   return (
-    <div>
+    <>
       {championSkills && (
-        <div>
+        <>
           <div className="space"></div>
           <div className="container-splash-inicio">
             <img src={`${URL_CHAMPIONS_SPLASH}${championInfo.id}_0.jpg`} alt="" className="splash-inicio" />
           </div>
-          <div className="container-resume">
+          <section className="container-resume">
             <h2 className="details-title">{championInfo.title.toUpperCase()}</h2>
             <h1 className="details-name">{championInfo.name.toUpperCase()}</h1>
             <div className="container-info">
               <div className="container-stats">
                 <p>
-                  {championInfo.tags[0]}
-                  <img src={LuchadorIcon} alt="Luchador Icon" />
+                  <span className='container-icons'><ChampionIcons tag={championInfo.tags[0]} /></span>
+                  {championInfo.tags[0]}<span /> {championInfo.tags[1]}
                 </p>
-                <ul>
-                  <li>{championInfo.info.attack}</li>
-                  <li>{championInfo.info.defense}</li>
-                  <li>{championInfo.info.magic}</li>
-                  <li>{championInfo.info.difficulty}</li>
-                </ul>
-                <p></p>
               </div>
               <hr />
               <div className="container-lore">
-                <p>{championInfo.blurb}</p>
+                {more && (
+                  <>
+                    <p>{championInfo.blurb}
+                      <button onClick={handleClick} className='button-more'>Ver Más </button>
+                    </p>
+                  </>
+                )}
+                {!more && (
+                  <>
+                    <p>{championInfo.lore}
+                      <button onClick={handleClick} className='button-more'>Ver Menos </button>
+                    </p>
+                  </>
+                )}
+              </div>
+              <hr />
+              <div className="container-stats">
+                <ul>
+                  <li>
+                    Attack:<span className='stats-span'>{championInfo.info.attack}</span>
+                  </li>
+                  <li>
+                    Defense:<span className='stats-span'>{championInfo.info.defense}</span>
+                  </li>
+                  <li>
+                    Magic: <span className='stats-span'>{championInfo.info.magic}</span>
+                  </li>
+                  <li>
+                    Difficulty:<span className='stats-span'>{championInfo.info.difficulty}</span>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+        </>
       )}
-    </div>
+    </>
   );
 };
 
