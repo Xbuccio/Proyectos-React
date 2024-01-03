@@ -5,8 +5,8 @@ import Nav from "./Nav";
 const Layout = ({ children }) => {
   return (
     <>
+      <Nav />
       <main>
-        <Nav />
         {children}
       </main>
       <Footer />

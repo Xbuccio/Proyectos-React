@@ -5,6 +5,7 @@ import { URL_CHAMPIONS_SKILL } from "../api/apiRest";
 import "../styles/ChampionsDetails.css"
 import ChampionInfo from "./ChampionInfo";
 import ChampionsHabilities from "./ChampionsHabilities";
+import ChampionGalery from "./ChampionGalery"
 
 
 const ChampionDetails = () => {
@@ -36,7 +37,7 @@ const ChampionDetails = () => {
     <div className="container-details">
       <ChampionInfo id={id} championSkills={championSkills} />
       <ChampionsHabilities id={id} championSkills={championSkills} />
-      
+      <ChampionGalery id={id} championSkills={championSkills}/>
     </div>
   );
 
