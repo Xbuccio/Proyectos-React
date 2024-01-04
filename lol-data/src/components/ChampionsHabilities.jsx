@@ -78,7 +78,7 @@ const ChampionsHabilities = ({ championSkills, id }) => {
               />
               <span className='a'></span>
               {skillSelect == spell.id.charAt(spell.id.length - 1) && (
-                <div className='spells-info'>
+                <div className='spells-info'>{console.log(spell.id.charAt(spell.id.length - 1))}
                   <h6>{spell.id.charAt(spell.id.length - 1)}</h6>
                   <h4>{spell.name}</h4>
                   <p>{spell.description}</p>

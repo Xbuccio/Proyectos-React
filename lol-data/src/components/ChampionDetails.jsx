@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { URL_CHAMPIONS_SKILL } from "../api/apiRest";
 import { useParams } from "react-router";
 import PropTypes from 'prop-types';
-import { URL_CHAMPIONS_SKILL } from "../api/apiRest";
-import "../styles/ChampionsDetails.css"
 import ChampionInfo from "./ChampionInfo";
 import ChampionsHabilities from "./ChampionsHabilities";
-import ChampionGalery from "./ChampionGalery"
+import ChampionGalery from "./ChampionGalery"//
+import "../styles/ChampionsDetails.css"
 
 
 const ChampionDetails = () => {
