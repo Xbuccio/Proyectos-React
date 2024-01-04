@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
 import { URL_CHAMPIONS_SPLASH } from "../api/apiRest";
-import "../styles/ChampionsInfo.css";
 import ChampionIcons from './ChampionsIcons';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
+import "../styles/ChampionsInfo.css";
 
 const ChampionInfo = ({ championSkills, id }) => {
 
@@ -23,9 +23,11 @@ const ChampionInfo = ({ championSkills, id }) => {
       {championSkills && (
         <>
           <div className="space"></div>
-          <div className="container-splash-inicio">
-            <img src={`${URL_CHAMPIONS_SPLASH}${championInfo.id}_0.jpg`} alt="" className="splash-inicio" />
-          </div>
+          <section>
+            <picture className="container-splash-inicio">
+              <img src={`${URL_CHAMPIONS_SPLASH}${championInfo.id}_0.jpg`} alt="" className="splash-inicio" />
+            </picture>
+          </section>
           <section className="container-resume">
             <h2 className="details-title">{championInfo.title.toUpperCase()}</h2>
             <h1 className="details-name">{championInfo.name.toUpperCase()}</h1>

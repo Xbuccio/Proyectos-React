@@ -1,64 +1,54 @@
+import PropTypes from 'prop-types';
 import '../styles/ChampionGalery.css'; // Asegúrate de importar tus estilos
+import { URL_CHAMPIONS_SPLASH } from '../api/apiRest';
+import { useState } from 'react';
 
-const SliderSection = () => {
+// ... (importaciones)
+
+const ChampionGalery = ({ championSkills, id }) => {
+
+  const [background, setBackground] = useState(0)
+  
+  if (!championSkills) {
+    return <p>Cargando...</p>;
+  }
+
+  const championGalery = championSkills.data[id];
+
+
+
   return (
-    <section className='galery-section'>
-      <div className="slider">
-        <div name="img_1">
-          <img
-            src="https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            alt="img_1"
-          />
+    <section className='galery-section' style={{ backgroundImage: `url(${URL_CHAMPIONS_SPLASH}${championGalery.id}_${background}.jpg)` }}>
+      <div className='skins-carousel'>
+        <h2>Aspectos Disponibles</h2>
+        <hr />
+        <hr style={{opacity:0}}/>
+        <div className='skins-carousel-div'>
+          <ul className='skins-button-container'>
+            {championGalery && championGalery.skins.map((skin) => (
+              <li key={skin.id}>
+                <button className='button-carousel' onClick={() => setBackground(skin.num)}>
+                  <img 
+                    src={`${URL_CHAMPIONS_SPLASH}${championGalery.id}_${skin.num}.jpg`} alt="" className='img-carousel' 
+                  />
+                  <p>{skin.name.toUpperCase()}</p>
+                </button>
+              </li>
+            ))}
+              <hr style={{opacity:0}} />
+              <hr style={{opacity:0}} />
+          </ul>
         </div>
-        <a name="img_2">
-          <img
-            src="https://images.unsplash.com/photo-1504713721722-f73b4ccdfe6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-            alt="img_2"
-          />
-        </a>
-        <a name="img_3">
-          <img
-            src="https://images.unsplash.com/photo-1532458198880-add09ce3b2f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-            alt="img_3"
-          />
-        </a>
-        <a name="img_4">
-          <img
-            src="https://images.unsplash.com/photo-1524767615-3d4139c938a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
-            alt="img_4"
-          />
-        </a>
       </div>
-
-      <div
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 80% at 50% -20%,#7877c64d,#fff0)',
-          position: 'absolute',
-          top: 0,
-          width: '100%',
-          height: '100%',
-          left: 0,
-          zIndex: -1,
-        }}
-      ></div>
-
-      <ul className="markers">
-        <li>
-          <a href="#img_1"></a>
-        </li>
-        <li>
-          <a href="#img_2"></a>
-        </li>
-        <li>
-          <a href="#img_3"></a>
-        </li>
-        <li>
-          <a href="#img_4"></a>
-        </li>
-      </ul>
     </section>
   );
 };
 
-export default SliderSection;
+ChampionGalery.propTypes = {
+  championSkills: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
+};
+
+export default ChampionGalery;
+
+
