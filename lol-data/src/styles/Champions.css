@@ -113,6 +113,7 @@ h3 {
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 200px;
 }
 
 .container-dificultad p {
@@ -142,11 +143,11 @@ summary {
 
 .list-dificul li {
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-left: 2px solid #ccc;
   border-right: 1px solid #ccc;
   background-color: #ffffff;
-  width: 139px
+  width: 191px
 }
 
 .list-dificul li:last-child {
@@ -178,7 +179,8 @@ details[open] summary {
 .vertical-line-2 {
   border: solid 1px #ccc;
   height: 30px;
-  margin: 0 10px;   
+  margin: 0 10px; 
+  position: relative; 
   display: inline;
   transition: transform 0.3s ease;
 }
@@ -261,20 +263,30 @@ details[open] summary {
   transition: transform 0.3s ease;
 }
 
-.icon-open {
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
+.icon-open,
 .icon-close {
   height: 25px;
   width: 25px;
   margin-right: 10px;
-  transform: rotate(270deg);
+  margin-top: -5px; /* Ajusta el margen top para ambas clases */
   transition: transform 0.3s ease;
+}
+
+.icon-close {
+  transform: rotate(180deg);
+}
+
+.icon-open {
+  transform: rotate(270deg);
+}
+
+.icon-x {
+  height: 12px;
+  width: 12px;opacity: 0.4;
+}
+
+.icon-x:hover {
+  cursor: pointer;
 }
 
 .container-buscador:hover {
@@ -324,4 +336,46 @@ details[open] summary {
 
 .buscador:not(:placeholder-shown) + .indicador {
   display: inline; /* Muestra el indicador cuando hay texto en el input */
+}
+
+.button-dificult {
+  border: none;
+  width: 100%;
+  height: 30px;
+  background-color: #ffffff;
+}
+
+.button-dificult:hover {
+  background-color: #ccc;
+}
+
+.paralelogramo {
+  width: 30px; 
+  height: 15px; 
+  background-color: rgb(189, 255, 255);
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-40deg);
+  margin-left: 5px;
+}
+
+.lleno {
+  background-color: rgb(0, 208, 255);
+}
+
+.button-parelelo {
+  border: none;
+  background: #ffffff;
+  margin-right: 10px;
+  
+}
+
+.button-parelelo:hover {
+  background-color: #ccc;
+}
+
+.button-dificult-select {
+  margin-right: 5px;
 }
