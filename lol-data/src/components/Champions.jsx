@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import search from '../icons/search.png'
+import back from '../icons/back.png'
 import { URL_CHAMPIONS, URL_CHAMPIONS_IMAGE } from '../api/apiRest';
+
 import "../styles/Champions.css"
 
 const Champions = () => {
   const [championData, setChampionData] = useState(null);
+  const [filters, setFilters] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [buttonOn, setButtonOn] = useState(false)
+  const [difficult, setDifficult] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,14 +33,103 @@ const Champions = () => {
     fetchData();
   }, []);
 
+  const filterChampions = () => {
+    if (!championData) return [];
+
+    // Aplicar filtros y búsqueda
+    let filteredChampions = Object.values(championData.data);
+
+    if (filters.length > 0) {
+      filteredChampions = filteredChampions.filter(champion =>
+        filters.includes(champion.tags[0]) // Suponiendo que el primer tag es suficiente para el filtro de rol
+      );
+    }
+
+    if (searchTerm) {
+      const regex = new RegExp(searchTerm, 'i');
+      filteredChampions = filteredChampions.filter(champion =>
+        regex.test(champion.name)
+      );
+    }
+
+    return filteredChampions;
+  };
+
   return (
     <>
-      
       <h1>Campeones</h1>
-      {championData ? (
-        <span className='champions-grid'>
+      <div className='container-barra'>
+        <div className='container-buscador'>
+          {!buttonOn &&
+            <div onClick={() => setButtonOn(!buttonOn)} className='flex buscador-hover'>
+              <img src={search} alt="" className='icon-search' />
+              <p>buscar</p>
+              <div className="vertical-line-1"></div>
+            </div>
+          }
+          {buttonOn &&
+            <div className='flex'>
+              <img src={back} alt="" className='icon-search ' onClick={() => setButtonOn(!buttonOn)} />
+              <input
+                className='buscador'
+                type="text"
+                placeholder="buscar"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <div className="vertical-line-11"></div>
+            </div>
+          }
+        </div>
 
-          {Object.values(championData.data).slice(0, 100).map((champion) => (
+        <div className='container-lista'>
+          <ul className='lista-clases'>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters([])}>Todos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Assassin'])}>Asesinos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Fighter'])}>Luchador</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Mage'])}>Magos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Marksman'])}>Tirador</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Support'])}>Support</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Tank'])}>Tanques</button>
+            </li>
+          </ul>
+        </div>
+
+        <div className='container-dificultad'>
+          <div className={`vertical-line-2 ${difficult == true ? 'line-open' : ''}`} ></div>
+          <details>
+            <summary className='flex' onClick={() => setDifficult(!difficult)}>
+              <img src={back} alt="" className={`${difficult == true ? 'icon-open' : 'icon-close'}`} />  
+              <span>Dificultades</span>
+            </summary>
+            <ul className='list-dificul'>
+              <li> 1</li>
+              <li> 2</li>
+              <li> 3</li>
+            </ul>
+          </details>
+        </div>
+    </div >
+
+    {
+      championData?(
+        <span className = 'champions-grid' >
+
+        {
+          filterChampions().map((champion) => (
             <Link to={`/${champion.id}`} key={champion.id} className='a'>
               <div className='champion-item'>
                 <div className='champion-img-container'>
@@ -42,12 +138,13 @@ const Champions = () => {
                 <h3>{champion.name.toUpperCase()}</h3>
               </div>
             </Link>
-          ))}
+          ))
+        }
 
-        </span>
+        </span >
       ) : (
-        <p>Loading...</p>
-      )}
+  <p>Loading...</p>
+)}
     </>
   );
 

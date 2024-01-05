@@ -16,7 +16,7 @@
   height: 300px;
   overflow: hidden;
 }
-
+ 
 .champions-image {
   transform: scale(1.05);
   position: relative;
@@ -28,37 +28,11 @@
   transition: transform 0.3s ease-in-out; /* Ajusta la duración y la función de temporización */
 }
 
-.champion-img-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(to bottom, transparent, transparent 20%, black 20%, black 100%);
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-right: 10px solid #ffffff;
-  border-top: 10px solid #fff8f8;
-  border-left: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
 .champions-image.champion-img-container {
   position: relative;
   width: auto;
   height: 300px;
   overflow: hidden;
-}
-
-.champions-image {
-  transform: scale(1.05);
-  position: relative;
-  top: 0px;
-  right: 0px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease-in-out; /* Transición para la imagen */
 }
 
 .champions-image:hover {
@@ -109,4 +83,245 @@ h3 {
 
 .a {
   text-decoration: none;
+}
+
+.container-barra {
+  border: solid 1px #ccc;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto 0;
+  width: 90%;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.container-buscador {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-buscador p {
+  text-align: center;
+  width: 50px;
+}
+
+.container-dificultad { 
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container-dificultad p {
+  text-align: center;
+}
+
+details { /* Establece la posición absoluta */
+  top: 100%; /* Coloca el details debajo del .container-dificultad */
+  left: 0;
+  margin: 0; /* Elimina el margen predeterminado de los detalles */
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none; 
+}
+
+.list-dificul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  z-index: 99;
+}
+
+.list-dificul li {
+  padding: 5px;
+  margin-left: 10px;
+  border-left: 2px solid #ccc;
+  border-right: 1px solid #ccc;
+  background-color: #ffffff;
+  width: 139px
+}
+
+.list-dificul li:last-child {
+  border-bottom: 2px solid #ccc;
+}
+
+/* Estilos específicos para el detalle abierto */
+details[open] summary {
+   /* Cambia el color del texto cuando el detalle está abierto */
+}
+
+.vertical-line-1 {
+  border: solid 1px #ccc;
+  height: 30px; 
+  margin: 0 10px;   
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.vertical-line-11 {
+  border: solid 1px #ccc;
+  position: relative;
+  height: 52px; 
+  margin: 0 10px;   
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.vertical-line-2 {
+  border: solid 1px #ccc;
+  height: 30px;
+  margin: 0 10px;   
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.line-open{
+  height: 52px;
+}
+
+.lista-clases {
+  list-style: none;
+  display: flex;
+}
+
+.boton-filtro {
+  width: 80px;
+  position: relative;
+  margin-left: -0px;
+  margin-right: -10px;
+  height: 52px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.333);
+  transition: 1s;
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden; /* Añadido para ocultar el exceso de pseudo-elementos */
+}
+
+.boton-filtro::before,
+.boton-filtro::after {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 90%; /* Centrar verticalmente en el medio del botón */
+  width: 0.1%; /* Inicialmente un ancho muy pequeño para que sea casi invisible */
+  height: 5%;
+  background-color: #c49e08;
+  transition: 0.5s;
+}
+
+.boton-filtro::before {
+  left: 49%;
+  transform: translateX(-50%) scaleX(0); /* Centrar horizontalmente y sin ancho inicial */
+}
+
+.boton-filtro::after {
+  right: 49%;
+  transform: translateX(50%) scaleX(0); /* Centrar horizontalmente y sin ancho inicial */
+}
+
+.boton-filtro:hover::before {
+  width: 10%; /* Al hacer hover, se expande hacia la izquierda */
+  transform-origin: top left; /* Centrar el origen de la transformación en la izquierda */
+  transform: scaleX(1); /* Expandir hacia la izquierda */
+}
+
+.boton-filtro:hover::after {
+  width: 10%; /* Al hacer hover, se expande hacia la derecha */
+  transform-origin: top right; /* Centrar el origen de la transformación en la derecha */
+  transform: scaleX(1); /* Expandir hacia la derecha */
+}
+
+.boton-filtro:hover {
+  color: #000000;
+}
+
+.boton-filtro:active,
+.boton-filtro.active {
+  color: #000000; /* Aumentar el tamaño de la línea al hacer clic */
+}
+
+.icon-search {
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.icon-open {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.icon-close {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  transform: rotate(270deg);
+  transition: transform 0.3s ease;
+}
+
+.container-buscador:hover {
+  cursor: pointer;
+}
+
+.buscador-hover:hover .icon-search{
+  transform: translateX(-5px)
+}
+
+.buscador-hover:hover .vertical-line-1{
+  transform: scaleY(1.8);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.buscador {
+  border: none;  /* Elimina el borde del input */
+  outline: none; /* Elimina el contorno al hacer clic */
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 50px;  /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+  transition: width 0.3s ease, font-family 0.3s ease;
+}
+
+.buscador::placeholder {
+  color: #A9A9A9;  /* Color del placeholder */
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px; /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+}
+
+.indicador {
+  /* Agrega estilos para el indicador, puede ser algún texto adicional que aparece dentro del input */
+  color: #808080;
+  font-size: 12px;
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px;  /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+  display: none; /* Inicialmente oculta el indicador */
+}
+
+.buscador:not(:placeholder-shown) + .indicador {
+  display: inline; /* Muestra el indicador cuando hay texto en el input */
 }
