@@ -1,7 +1,8 @@
 .container-habilities {
   color: white;
-  width: 1400px;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center; 
 }
@@ -39,8 +40,9 @@
   margin: 20px;
 }
 
+
 .custom-video {
-  width: 100%; /* Ajusta el valor según tus necesidades para obtener el ancho deseado */
+  width: 80%; /* Ajusta el valor según tus necesidades para obtener el ancho deseado */
   transform-origin: center center;
   transform: scale(1.2); /* Ajusta el valor para obtener el efecto de zoom */
 }
@@ -96,4 +98,46 @@
 
 .spells-info h6 {
   color: rgb(69, 72, 75);
+}
+
+@media only screen and (max-width: 900px) {
+  /* Estilos específicos para dispositivos móviles en modo retrato con ancho máximo de 320px */
+  .container-habilities h2 {
+    display: none;
+  }
+
+  .container-habilities-info ul {
+    margin-top: 300px;
+    margin-right: 0;
+  }
+
+  .container-video {
+    position: absolute;
+    margin-top: -200px;
+  }
+
+  .background-f-habilities {
+    display: none;
+  }
+
+  .background-habilities {
+    display: none;
+  }
+
+  .container-video {
+    height: 280px;
+  }
+
+  .img-habilitie {
+    padding: 5px;
+    margin: 0 5px;
+    height: 70px;
+    width: 70px;
+  }
+
+  .spells-info {
+    margin-left: 0;
+    width: 300px;
+    left: 18%;
+  }
 }

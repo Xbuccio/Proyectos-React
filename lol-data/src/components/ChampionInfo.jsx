@@ -56,19 +56,19 @@ const ChampionInfo = ({ championSkills, id }) => {
                 )}
               </div>
               <hr />
-              <div className="container-stats">
+              <div className="container-stats2">
                 <ul>
                   <li>
-                    Attack:<span className='stats-span'>{championInfo.info.attack}</span>
+                    Attack: <span className='stats-span'>{championInfo.info.attack}</span>
                   </li>
                   <li>
-                    Defense:<span className='stats-span'>{championInfo.info.defense}</span>
+                    Defense: <span className='stats-span'>{championInfo.info.defense}</span>
                   </li>
                   <li>
                     Magic: <span className='stats-span'>{championInfo.info.magic}</span>
                   </li>
                   <li>
-                    Difficulty:<span className='stats-span'>{championInfo.info.difficulty}</span>
+                    Difficulty: <span className='stats-span'>{championInfo.info.difficulty}</span>
                   </li>
                 </ul>
               </div>

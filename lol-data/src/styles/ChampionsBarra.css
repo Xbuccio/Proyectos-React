@@ -1,0 +1,311 @@
+
+.container-barra {
+  border: solid 1px #ccc;
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto 0;
+  width: 90%;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.container-buscador {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-buscador p {
+  text-align: center;
+  width: 50px;
+}
+
+.container-dificultad { 
+  margin-right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+}
+
+.container-dificultad p {
+  text-align: center;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none; 
+}
+
+.list-dificul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 10.5%;
+  z-index: 99;
+}
+
+.list-dificul li {
+  padding: 5px 15px ;
+  margin-left: 12%;
+  border-left: 2px solid #ccc;
+  border-right: 1px solid #ccc;
+  background-color: #ffffff;
+  width: 118.5%;
+}
+
+.list-dificul li:last-child {
+  border-bottom: 2px solid #ccc;
+}
+
+.vertical-line-1 {
+  border: solid 1px #ccc;
+  height: 30px; 
+  margin: 0 10px;   
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.vertical-line-11 {
+  border: solid 1px #ccc;
+  position: relative;
+  height: 52px; 
+  margin: 0 10px;   
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.vertical-line-2 {
+  border: solid 1px #ccc;
+  height: 30px;
+  margin: 0 10px; 
+  position: relative; 
+  display: inline;
+  transition: transform 0.3s ease;
+}
+
+.line-open{
+  height: 52px;
+}
+
+.lista-clases {
+  list-style: none;
+  display: flex;
+}
+
+.boton-filtro {
+  width: 80px;
+  position: relative;
+  margin-left: -0px;
+  margin-right: -10px;
+  height: 52px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.333);
+  transition: 1s;
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden; /* Añadido para ocultar el exceso de pseudo-elementos */
+}
+
+.boton-filtro::before,
+.boton-filtro::after {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 90%; /* Centrar verticalmente en el medio del botón */
+  width: 0.1%; /* Inicialmente un ancho muy pequeño para que sea casi invisible */
+  height: 5%;
+  background-color: #c49e08;
+  transition: 0.5s;
+}
+
+.boton-filtro::before {
+  left: 49%;
+  transform: translateX(-50%) scaleX(0); /* Centrar horizontalmente y sin ancho inicial */
+}
+
+.boton-filtro::after {
+  right: 49%;
+  transform: translateX(50%) scaleX(0); /* Centrar horizontalmente y sin ancho inicial */
+}
+
+.boton-filtro:hover::before {
+  width: 10%; /* Al hacer hover, se expande hacia la izquierda */
+  transform-origin: top left; /* Centrar el origen de la transformación en la izquierda */
+  transform: scaleX(1); /* Expandir hacia la izquierda */
+}
+
+.boton-filtro:hover::after {
+  width: 10%; /* Al hacer hover, se expande hacia la derecha */
+  transform-origin: top right; /* Centrar el origen de la transformación en la derecha */
+  transform: scaleX(1); /* Expandir hacia la derecha */
+}
+
+.boton-filtro:hover {
+  color: #000000;
+}
+
+.boton-filtro:active,
+.boton-filtro.active {
+  color: #000000; /* Aumentar el tamaño de la línea al hacer clic */
+}
+
+.icon-search {
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.icon-open,
+.icon-close {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  margin-top: -5px; /* Ajusta el margen top para ambas clases */
+  transition: transform 0.3s ease;
+}
+
+.icon-close {
+  transform: rotate(180deg);
+}
+
+.icon-open {
+  transform: rotate(270deg);
+}
+
+.icon-x {
+  height: 12px;
+  width: 12px;opacity: 0.4;
+}
+
+.icon-x:hover {
+  cursor: pointer;
+}
+
+.container-buscador:hover {
+  cursor: pointer;
+}
+
+.buscador-hover:hover .icon-search{
+  transform: translateX(-5px)
+}
+
+.buscador-hover:hover .vertical-line-1{
+  transform: scaleY(1.8);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.buscador {
+  border: none;  /* Elimina el borde del input */
+  outline: none; /* Elimina el contorno al hacer clic */
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 50px;  /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+  transition: width 0.3s ease, font-family 0.3s ease;
+}
+
+.buscador::placeholder {
+  color: #A9A9A9;  /* Color del placeholder */
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px; /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+}
+
+.indicador {
+  /* Agrega estilos para el indicador, puede ser algún texto adicional que aparece dentro del input */
+  color: #808080;
+  font-size: 12px;
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 12px;  /* Reemplaza 'TuFuente' con el nombre de la fuente deseada */
+  display: none; /* Inicialmente oculta el indicador */
+}
+
+.buscador:not(:placeholder-shown) + .indicador {
+  display: inline; /* Muestra el indicador cuando hay texto en el input */
+}
+
+.button-dificult {
+  border: none;
+  width: 100%;
+  height: 30px;
+  background-color: #ffffff;
+}
+
+.button-dificult:hover {
+  background-color: #ccc;
+}
+
+.paralelogramo {
+  width: 30px; 
+  height: 15px; 
+  background-color: rgb(189, 255, 255);
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-40deg);
+  margin-left: 5px;
+}
+
+.paralelogramo-2 {
+  width: 20px; 
+  height: 15px; 
+  background-color: rgb(189, 255, 255);
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-40deg);
+  margin-left: 5px;
+}
+
+.lleno {
+  background-color: rgb(0, 208, 255);
+}
+
+.button-parelelo {
+  border: none;
+  background: #ffffff;
+  margin-right: 10px;
+  
+}
+
+.button-parelelo:hover {
+  background-color: #ccc;
+}
+
+.button-dificult-select {
+  margin-right: 15%;
+  margin-left: 2px;
+}
+
+.span-dificult{
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 999px) {
+  .container-barra {
+    width: auto;
+  }
+  .buscador-hover p {
+    display: none;
+  }
+}
+
