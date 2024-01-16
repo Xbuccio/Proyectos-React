@@ -308,14 +308,35 @@ summary {
   list-style: none;
   position: absolute;
   background-color: #ffffff;
-  border: solid 1px #ccc;
+  border: solid 2px #ccc;
   border-top: none;
   height: 135px;
-  width: 203px;
-  margin-left: -30px;
+  width: 130px;
+  margin-left: 0px;
+  margin-top: 9px;
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 999;
+}
+
+.lista-clases-flex li {
+  text-align: center;
+}
+
+.lista-clases-flex::-webkit-scrollbar {
+  width: 0.25em; 
+}
+
+.lista-clases-flex::-webkit-scrollbar-thumb {
+  background-color: #88888863; 
+}
+
+.lista-clases-flex:hover {
+  cursor: pointer; 
+}
+
+.lista-clases-flex:active {
+  cursor: grab; 
 }
 
 @media only screen and (max-width: 999px) {
