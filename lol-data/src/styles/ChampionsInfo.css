@@ -71,6 +71,7 @@
   justify-content: center;
   padding: 20px 200px;
   font-weight: 100;
+  margin-top: 50px;
 }
 
 @media only screen and (max-width: 1250px) {
@@ -227,11 +228,7 @@ hr {
 
   .container-lore {
     position: relative;
-    top: 50px;
-    height: 200px;
+    top: 120px;
+    height: auto;
   }
-}
-
-@media only screen and (max-width: 430px) {
-  /* Estilos específicos para dispositivos móviles en modo retrato con ancho máximo de 320px */
 }

@@ -34,7 +34,7 @@ const ChampionDetails = () => {
   }, [id]);
 
   return (
-    <div className="container-details">
+    <div className="container-details" >
       <ChampionInfo id={id} championSkills={championSkills} />
       <ChampionsHabilities id={id} championSkills={championSkills} />
       <ChampionGalery id={id} championSkills={championSkills}/>

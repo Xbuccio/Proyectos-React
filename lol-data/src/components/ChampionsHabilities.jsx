@@ -46,7 +46,7 @@ const ChampionsHabilities = ({ championSkills, id }) => {
     <section className='container-habilities'>
 
       <ChampionBackgroundIcons tag={championData.tags[0]} />
-      <div className='container-habilities-info'>
+      <div className='container-habilities-info' >
         <h2>Habilidades</h2>
         <ul >
           {championSkills && (
@@ -62,7 +62,7 @@ const ChampionsHabilities = ({ championSkills, id }) => {
                 <div className='spells-info'>
                   <h6>PASIVA</h6>
                   <h4>{championData.passive.name}</h4>
-                  <p>{championData.passive.description}</p>
+                  <p dangerouslySetInnerHTML={{ __html: championData.passive.description }} />
                 </div>
               )}
             </li>
@@ -81,7 +81,7 @@ const ChampionsHabilities = ({ championSkills, id }) => {
                 <div className='spells-info'>{console.log(spell.id.charAt(spell.id.length - 1))}
                   <h6>{spell.id.charAt(spell.id.length - 1)}</h6>
                   <h4>{spell.name}</h4>
-                  <p>{spell.description}</p>
+                  <p dangerouslySetInnerHTML={{ __html: spell.description }} />
                 </div>
               )}
             </li>

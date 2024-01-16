@@ -22,3 +22,7 @@ body {
   font-family: "Beaufort for LOL Bold";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
