@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import PropTypes from 'prop-types';
 import search from '../icons/search.png'
 import back from '../icons/back.png'
@@ -9,6 +9,83 @@ const Barra = ({ setFilters, dificultFilter, setDificultFilter, searchTerm, setS
 
   const [buttonOn, setButtonOn] = useState(false)
   const [difficult, setDifficult] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Renderizar el filtro con details y summary solo si el ancho de la pantalla es menor que 768px
+  const renderMobileFilter = () => {
+    if (windowWidth < 768) {
+      return (
+        <details className="filtro">
+          <summary className="summary-filter">Filtrar por Clase </summary>
+            <ul className='lista-clases-flex'>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters([])}>Todos</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Assassin'])}>Asesinos</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Fighter'])}>Luchador</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Mage'])}>Magos</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Marksman'])}>Tirador</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Support'])}>Support</button>
+              </li>
+              <li>
+                <button className='boton-filtro' onClick={() => setFilters(['Tank'])}>Tanques</button>
+              </li>
+            </ul>
+         
+        </details>
+      );
+    } else {
+      // Renderizar el filtro normal para pantallas más grandes
+      return (
+        <div className='container-lista'>
+          <ul className='lista-clases'>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters([])}>Todos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Assassin'])}>Asesinos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Fighter'])}>Luchador</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Mage'])}>Magos</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Marksman'])}>Tirador</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Support'])}>Support</button>
+            </li>
+            <li>
+              <button className='boton-filtro' onClick={() => setFilters(['Tank'])}>Tanques</button>
+            </li>
+          </ul>
+        </div>
+      );
+    }
+  };
 
   return (
     <div className='container-barra'>
@@ -35,31 +112,7 @@ const Barra = ({ setFilters, dificultFilter, setDificultFilter, searchTerm, setS
         }
       </div>
 
-      <div className='container-lista'>
-        <ul className='lista-clases'>
-          <li>
-          <button className='boton-filtro' onClick={() => setFilters([])}>Todos</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Assassin'])}>Asesinos</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Fighter'])}>Luchador</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Mage'])}>Magos</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Marksman'])}>Tirador</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Support'])}>Support</button>
-          </li>
-          <li>
-            <button className='boton-filtro' onClick={() => setFilters(['Tank'])}>Tanques</button>
-          </li>
-        </ul>
-      </div>
+      {renderMobileFilter()}
 
       <div className='container-dificultad'>
         <div className={`vertical-line-2 ${difficult == true ? 'line-open' : ''}`} ></div>

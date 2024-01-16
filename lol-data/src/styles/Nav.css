@@ -15,8 +15,7 @@
 .nav-button {
   padding: 10px 20px;
   font-size: 16px;
-  color: white;
-  background-color: #3498db;
+  background-color: rgb(174, 160, 2);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -31,4 +30,15 @@
   text-decoration: none;
   color: white;
   font-size: 16px;
+}
+
+.nav-button a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.icon-nav{
+  height: 70px;
+  width: 110px;
 }
