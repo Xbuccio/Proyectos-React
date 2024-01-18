@@ -1,0 +1,13 @@
+.layout {
+  height: 100dvh;
+}
+
+.layout-open{
+  margin-left: 175px;
+  width: 82%;
+}
+
+.layout-close{
+  margin-left: 350px;
+  width: 71%;
+}
