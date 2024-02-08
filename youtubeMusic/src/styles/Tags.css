@@ -1,5 +1,5 @@
 /* Estilos para la lista y sus elementos */
-ul {
+.ul-tags {
   list-style: none;
   padding: 0;
   display: flex;
@@ -12,12 +12,12 @@ ul {
   transition: overflow 0.3s, margin-right 0.3s; /* Agrega una transición suave para la propiedad overflow y margin-right */
 }
 
-ul:hover {
+.ul-tags:hover {
   overflow: auto; /* Muestra la barra de desplazamiento cuando haces hover */
  
 }
 
-li {
+.li-tags {
   font-size: 0.9rem;
   background-color: rgba(169, 168, 198, 0.2);
   padding: 10px;
@@ -28,17 +28,17 @@ li {
   transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color de fondo */
 }
 
-li:hover {
+.li-tags:hover {
   background-color: rgba(169, 168, 198, 0.467);
   cursor: pointer;
 }
 
 /* Estilos para la barra de desplazamiento */
-ul::-webkit-scrollbar {
+.ul-tags::-webkit-scrollbar {
   width: 8px; /* Ancho de la barra de desplazamiento */
 }
 
-ul::-webkit-scrollbar-thumb {
+.ul-tags::-webkit-scrollbar-thumb {
   background-color: rgba(169, 168, 198, 0.4); /* Color del control deslizante */
   border-radius: 4px; /* Borde redondeado del control deslizante */
 }

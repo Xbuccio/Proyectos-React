@@ -1,53 +1,63 @@
 import { useEffect, useState } from 'react';
-import YoutubeMusicApi from 'youtube-music-api';
+import YouTube from 'react-youtube';
 
-const MusicSearch = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [searchResults, setSearchResults] = useState(null);
+const YourComponent = () => {
+  const [videos, setVideos] = useState([]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
-    const api = new YoutubeMusicApi();
-
-    const fetchData = async () => {
-      try {
-        console.log('Iniciando la API...');
-        await api.initalize();
-        console.log('API inicializada correctamente.');
-    
-        // Resto del código para obtener datos...
-    
-        setLoading(false); // Indicar que los datos se han cargado correctamente
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setError(error); // Manejar errores
-        setLoading(false); // Indicar que ha ocurrido un error al cargar los datos
-      }
+    const apiResponse = {
+      mvids: [
+        {
+          "idTrack": "35816341",
+          "strTrack": "Sacrifice",
+          "strArtist": "The Weeknd",
+          "strMusicVid": "https://www.youtube.com/watch?v=09O82HhISPU&ab"
+        },
+      ]
     };
 
-    fetchData();
+    const videoLinks = apiResponse.mvids.map(video => ({
+      strTrack: video.strTrack,
+      strArtist: video.strArtist,
+      strMusicVid: video.strMusicVid
+    }));
+
+    setVideos(videoLinks);
   }, []);
 
-  if (loading) {
-    return <p>Cargando...</p>;
-  }
+  const handlePlayClick = () => {
+    setIsVideoPlaying(true);
+  };
 
-  if (error) {
-    return <p>Error al cargar los datos: {error.message}</p>;
-  }
+  const handleVideoEnd = () => {
+    setIsVideoPlaying(false);
+    setCurrentVideoIndex(prevIndex => (prevIndex + 1) % videos.length);
+  };
+
+  const currentVideo = videos[currentVideoIndex];
 
   return (
     <div>
-      <h2>Resultados de búsqueda:</h2>
-      <ul>
-        {searchResults.content.map(item => (
-          <li key={item.videoId}>
-            <strong>{item.name}</strong> - {item.type}
-          </li>
-        ))}
-      </ul>
+      {currentVideo && (
+        <div>
+          <h2>{currentVideo.strTrack}</h2>
+          <p>Artista: {currentVideo.strArtist}</p>
+          {isVideoPlaying && (
+            <YouTube
+              videoId={currentVideo.strMusicVid.split('v=')[1]}
+              opts={{ height: '0', width: '0', playerVars: { autoplay: 1 } }}
+              onEnd={handleVideoEnd}
+            />
+          )}
+          <button onClick={handlePlayClick}>
+            Play Next
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default MusicSearch;
+export default YourComponent;
