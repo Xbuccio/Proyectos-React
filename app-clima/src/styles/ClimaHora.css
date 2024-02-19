@@ -1,0 +1,21 @@
+.container-hora {
+  height: 100%;
+  width: 100%;
+  border: solid 1px;
+  border-radius: 10px;
+}
+
+.hora {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.hora-individual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
