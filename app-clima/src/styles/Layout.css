@@ -23,15 +23,3 @@
   grid-row: 4 / 5;
   margin-left: -70px;
 }
-
-.localidad {
-  font-size: 25px;
-}
-
-.temperatura {
-  font-size: 70px;
-}
-
-.datos-extra {
-  font-size: 18px;
-}

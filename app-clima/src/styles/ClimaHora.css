@@ -1,21 +1,66 @@
-.container-hora {
-  height: 100%;
-  width: 100%;
-  border: solid 1px;
+.container-climahora {
   border-radius: 10px;
+  background-color: rgba(58, 58, 58, 0.19);
+}
+
+.container-hora {
+  width: auto; /* Ancho fijo menos el padding horizontal */
+  overflow-x: auto; /* Desplazamiento horizontal */
+  white-space: nowrap; /* Evita que las horas se envuelvan a la siguiente línea */
+}
+
+.carrusel {
+  display: inline-flex; /* Usamos flexbox en línea para que las horas no se envuelvan */
+  gap: 10px; /* Espacio entre las horas */
 }
 
 .hora {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  justify-content: space-between;
+  width: 160px; /* Ancho de cada hora */
+  height: 200px; /* Altura de cada hora */
+  border: solid 1px aqua;
+  border-radius: 10px;
 }
 
-.hora-individual {
+.tarjeta-hora {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 20%;
+}
+
+.tarjeta-hora-1 img {
+  height: 50px;
+  width: 50px;
+}
+
+.hora-hora {
+  background-color: aqua;
+  text-align: center;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+
+.hora-individual {
+  
+}
+
+.hora-individual > p {
+  
+}
+
+.container-hora::-webkit-scrollbar {
+  width: 18px; /* Ancho de la barra de desplazamiento */
+}
+
+.container-hora::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Color de fondo de la barra de desplazamiento */
+}
+
+.container-hora::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3); /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 4px; /* Borde redondeado del pulgar */
+}
+
+.container-hora::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); /* Color del pulgar al pasar el mouse sobre él */
 }
