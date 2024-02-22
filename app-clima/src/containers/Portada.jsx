@@ -13,7 +13,7 @@ function Portada({ lugar, clima }) {
       {lugar && (
         <>
           <h2 className="localidad">{lugar?.name}, {lugar?.adm_area1}</h2>
-          <p>{lugar?.country}</p>
+          <p style={{fontSize: '20px'}}>{lugar?.timezone.split("/").slice(1,2)}</p>
         </>
       )}
       {clima && (
