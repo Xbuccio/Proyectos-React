@@ -8,15 +8,34 @@
   justify-content: end;
 }
 
-.container-temperatura > img {
-  height: 75px;
-  width: 75px;
+.temperatura {
+  font-size: 100px;
+  margin-top: 50px;
+  margin-bottom: 45px;
+  
 }
 
-.temperatura {
-  font-size: 70px;
+.container-datos {
+  font-size: 30px;
 }
 
 .datos-extra {
-  font-size: 18px;
+  font-size: 22px;
+}
+
+.datos-extra p {
+  background-color: rgba(0, 0, 0, 0.555);
+
+}
+
+.min-max-portada {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+
+.min-max-portada p {
+  margin: 0;  background-color: rgba(0, 0, 0, 0.555);
+
 }

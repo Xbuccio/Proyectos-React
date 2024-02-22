@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import "../styles/Portada.css"
-import IconoCorrecto from '../components/IconoCorrecto';
 
 function Portada({ lugar, clima }) {
 
@@ -13,18 +12,23 @@ function Portada({ lugar, clima }) {
       {lugar && (
         <>
           <h2 className="localidad">{lugar?.name}, {lugar?.adm_area1}</h2>
-          <p style={{fontSize: '20px'}}>{lugar?.timezone.split("/").slice(1,2)}</p>
+          <p style={{ fontSize: '20px' }}>{lugar?.timezone.split("/").slice(1, 2)}</p>
         </>
       )}
       {clima && (
         <>
           <div className='container-temperatura'>
-            <IconoCorrecto clima={clima} num={clima?.current?.icon_num} />
             <h1 className="temperatura">{clima?.current?.temperature} °C</h1>
           </div>
-          <p className="datos-extra"></p>
-          <p className="datos-extra">Viento: {clima?.current?.wind?.speed}km/h</p>
-          <p className="datos-extra">Precipitaciones: {clima?.current?.precipitation?.total}% </p>
+          <div className='container-datos'>
+            <div className='min-max-portada'>
+              <p>{clima?.daily?.data[0]?.all_day?.temperature_min}°</p>
+              <p>{clima?.daily?.data[0]?.all_day?.temperature_max}°</p>
+            </div>
+            <p className="datos-extra"></p>
+            <p className="datos-extra">Viento: {clima?.current?.wind?.speed}km/h</p>
+            <p className="datos-extra">Precipitaciones: {clima?.current?.precipitation?.total}% </p>
+          </div>
         </>
       )}
     </>
@@ -32,8 +36,8 @@ function Portada({ lugar, clima }) {
 }
 
 Portada.propTypes = {
-  lugar: PropTypes.object.isRequired,
-  clima: PropTypes.object.isRequired
+  lugar: PropTypes.object,
+  clima: PropTypes.object
 };
 
 export default Portada

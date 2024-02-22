@@ -3,6 +3,11 @@ import Dia from "./Dia"
 import "../styles/ClimaDia.css"
 
 function ClimaDia ({ clima }) {
+
+  if (!clima) {
+    return <div>Cargando...</div>;
+  }
+
   return (
     <div className="container-dia">
       <Dia clima={clima} diaNum={1} />
@@ -10,13 +15,14 @@ function ClimaDia ({ clima }) {
       <Dia clima={clima} diaNum={3} />
       <Dia clima={clima} diaNum={4} />
       <Dia clima={clima} diaNum={5} />
-      <Dia clima={clima} diaNum={6} />
+
+       {/*      <Dia clima={clima} diaNum={6} />**/}
     </div>
   )
 }
 
 ClimaDia.propTypes = {
-  clima: PropTypes.object.isRequired
+  clima: PropTypes.object
 };
 
 

@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'
 import IconoCorrecto from '../components/IconoCorrecto';
+import Termometro from '../icons/termometro.png'
+import Gota from '../icons/gota.png'
+import Viento from '../icons/viento.png'
 
 const diasSemana = [
   'Domingo',
@@ -25,20 +28,38 @@ function Dia({ clima, diaNum }) {
   const nombreDiaSemana = diasSemana[numeroDiaSemana - 1];
 
   return (
-    <>
-      <p>{nombreDiaSemana}</p>
-      <p>{climaDia?.all_day?.temperature}</p>
-      <p>{climaDia?.all_day?.temperature_min}</p>
-      <p>{climaDia?.all_day?.temperature_max}</p>
-      <IconoCorrecto clima={clima} num={climaDia?.icon} />
-      <p>{climaDia?.summary}</p>
-    </>
+    <div className='tarjeta-dia'>
+      <div className='titulo-dia'>
+        <p>{nombreDiaSemana}</p>
+        <IconoCorrecto clima={clima} num={climaDia?.icon} />
+      </div>
+      <div className='dia-individual'>
+        <div className='individual'>
+          <span><img src={Termometro} className='iconos-dia' alt="" /></span>
+          <p className='temp-dia'>{climaDia?.all_day?.temperature}°</p>
+          <div className='min-max'>
+            <p>{climaDia?.all_day?.temperature_min}°</p>
+            <p>{climaDia?.all_day?.temperature_max}°</p>
+          </div>
+        </div>
+        <div className='individual2'>
+          <div style={{display:'flex', alignItems:'center', justifyContent:'space-around', marginTop:'0px'}}>
+            <img src={Gota} className='iconos-dia' alt="" />
+            <p>{climaDia?.all_day?.precipitation?.total} mm</p>
+          </div>
+          <div  style={{display:'flex', alignItems:'center', justifyContent:'space-around', marginTop:'-15px'}}>
+            <img src={Viento} className='iconos-dia' alt="" />
+            <p>{climaDia?.all_day?.precipitation?.total} km/h</p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
 Dia.propTypes = {
-  diaNum: PropTypes.object.isRequired,
-  clima: PropTypes.object.isRequired
+  diaNum: PropTypes.number.isRequired,
+  clima: PropTypes.object
 };
 
 export default Dia

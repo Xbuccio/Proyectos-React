@@ -1,24 +1,21 @@
-.container-climahora {
-  border-radius: 10px;
-  background-color: rgba(58, 58, 58, 0.19);
-}
-
 .container-hora {
   width: auto; /* Ancho fijo menos el padding horizontal */
   overflow-x: auto; /* Desplazamiento horizontal */
-  white-space: nowrap; /* Evita que las horas se envuelvan a la siguiente línea */
+  white-space: nowrap;margin-top: -90px; /* Evita que las horas se envuelvan a la siguiente línea */
 }
 
 .carrusel {
   display: inline-flex; /* Usamos flexbox en línea para que las horas no se envuelvan */
   gap: 10px; /* Espacio entre las horas */
+  
 }
 
 .hora {
   width: 160px; /* Ancho de cada hora */
   height: 200px; /* Altura de cada hora */
-  border: solid 1px aqua;
+  border: solid 1px rgb(255, 255, 255);
   border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.29);
 }
 
 .tarjeta-hora {
@@ -33,31 +30,39 @@
 }
 
 .hora-hora {
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
   text-align: center;
   margin: 0;
   border-radius: 10px 10px 0 0;
+  color: black;
 }
 
-
-.hora-individual {
-  
+.tarjeta-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: -8px;
 }
 
-.hora-individual > p {
-  
-}
 
 .container-hora::-webkit-scrollbar {
-  width: 18px; /* Ancho de la barra de desplazamiento */
+  width: 18px;
+  height: 5px;
+  opacity: 0; /* Inicialmente, hacemos la barra de desplazamiento transparente */
+  transition: opacity 0.3s; /* Agregamos una transición suave para que aparezca y desaparezca gradualmente */
+}
+
+.container-hora:hover::-webkit-scrollbar {
+  opacity: 1; /* Cuando el cursor está sobre el contenedor, hacemos la barra de desplazamiento visible */
 }
 
 .container-hora::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1); /* Color de fondo de la barra de desplazamiento */
+  background: rgba(255, 251, 251, 0.1); /* Color de fondo de la barra de desplazamiento */
 }
 
 .container-hora::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3); /* Color del pulgar de la barra de desplazamiento */
+  background: rgba(255, 255, 255, 0.3); /* Color del pulgar de la barra de desplazamiento */
   border-radius: 4px; /* Borde redondeado del pulgar */
 }
 

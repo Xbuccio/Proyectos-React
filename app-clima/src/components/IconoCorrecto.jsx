@@ -165,7 +165,7 @@ function IconoCorrecto({ clima, num }) {
 
 IconoCorrecto.propTypes = {
   clima: PropTypes.object.isRequired,
-  num: PropTypes.object.isRequired
+  num: PropTypes.number.isRequired
 };
 
 export default IconoCorrecto

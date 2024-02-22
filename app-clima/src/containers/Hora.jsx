@@ -1,4 +1,7 @@
 import IconoCorrecto from "../components/IconoCorrecto"
+import Termometro from '../icons/termometro.png'
+import Gota from '../icons/gota.png'
+import Viento from '../icons/viento.png'
 import PropTypes from 'prop-types';
 
 function Hora({ clima, horaNum }) {
@@ -15,9 +18,18 @@ function Hora({ clima, horaNum }) {
             <IconoCorrecto clima={clima} num={dataClima?.icon} />
           </div>
           <div className="tarjeta-hora-2">
-            <p>{dataClima?.temperature} °C</p>
-            <p>{dataClima?.precipitation?.total} mm</p>
-            <p>{dataClima?.wind?.speed}km/h</p>
+            <div className="tarjeta-flex">
+              <img src={Termometro} className='iconos-dia' alt="" />
+              <p>{dataClima?.temperature} °C</p>
+            </div>
+            <div className="tarjeta-flex">
+              <img src={Gota} className='iconos-dia' alt="" />
+              <p>{dataClima?.precipitation?.total} mm</p>
+            </div>
+            <div className="tarjeta-flex">
+              <img src={Viento} className='iconos-dia' alt="" />
+              <p>{dataClima?.wind?.speed}km/h</p>
+            </div>
           </div>
         </div>
       )}
@@ -26,7 +38,7 @@ function Hora({ clima, horaNum }) {
 }
 
 Hora.propTypes = {
-  horaNum: PropTypes.object.isRequired,
+  horaNum: PropTypes.number.isRequired,
   clima: PropTypes.object.isRequired
 };
 

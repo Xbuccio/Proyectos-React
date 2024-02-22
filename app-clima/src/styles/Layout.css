@@ -6,8 +6,7 @@
   height: 90vh;
 }
 
-.principal {
-  margin-top: 50px;
+.principal {  
   text-align: end;
   grid-column: 2 / 4;
   grid-row: 1 / 4;
@@ -22,4 +21,5 @@
   grid-column: 2 / 4;
   grid-row: 4 / 5;
   margin-left: -70px;
+  margin-top: 80px;
 }

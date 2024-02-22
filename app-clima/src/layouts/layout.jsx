@@ -3,6 +3,7 @@ import ClimaDia from "../containers/Clima-dia"
 import ClimaHora from "../containers/Clima-hora"
 import Portada from "../containers/Portada"
 import "../styles/Layout.css"
+import VideoFondo from "../components/VideoFondo"
 
 
 const APIKEY = "9pkepgi0tyko1024n23zab5b2c2iepyfwhpcafke"
@@ -35,6 +36,7 @@ function Layout() {
 
   return (
     <div className="layout">
+      <VideoFondo clima={clima}/>
       <section className="principal">
         <Portada lugar={lugar} clima={clima} />
       </section>

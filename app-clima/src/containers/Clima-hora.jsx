@@ -1,20 +1,46 @@
-import PropTypes from 'prop-types'
-import '../styles/ClimaHora.css'
-import Hora from './Hora'
+import { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/ClimaHora.css';
+import Hora from './Hora';
 
 function ClimaHora({ clima }) {
+  const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const fechaCompleta = new Date(clima?.hourly?.data[0].date)
+  if (!clima) {
+    return <div>Cargando...</div>;
+  }
 
-  const dia = fechaCompleta.getDate();
-  const mes = fechaCompleta.getMonth() + 1; // Los meses comienzan desde 0, por lo que sumamos 1
-  //const año = fechaCompleta.getFullYear();
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 3; // Ajusta el valor según la sensibilidad deseada
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   return (
     <div className="container-climahora">
-      <h2>Lunes, {`${dia}/${mes}`}</h2>
-      <div className='container-hora'>
-        <div className='carrusel'>
+      <div
+        className="container-hora"
+        ref={containerRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      >
+        <div className="carrusel">
           <Hora clima={clima} horaNum={0} />
           <Hora clima={clima} horaNum={1} />
           <Hora clima={clima} horaNum={2} />
@@ -42,12 +68,11 @@ function ClimaHora({ clima }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 ClimaHora.propTypes = {
-  clima: PropTypes.object.isRequired
+  clima: PropTypes.object
 };
 
-
-export default ClimaHora
+export default ClimaHora;
