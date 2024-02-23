@@ -5,7 +5,8 @@
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index: -1; /* Asegura que el video esté detrás del contenido */
+  z-index: -1;
+  background-attachment: fixed; /* Fija el fondo para evitar el desplazamiento */
 }
 
 .video-background video {
@@ -15,6 +16,6 @@
 }
 
 .content {
-  position: relative; /* Asegura que el contenido esté encima del video */
-  z-index: 1; /* Asegura que el contenido esté encima del video */
+  position: relative;
+  z-index: 1;
 }
