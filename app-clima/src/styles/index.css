@@ -42,7 +42,8 @@ p {
 }
 
 @media (max-width: 768px) { /* Aplica solo en dispositivos móviles */
-  body.touch-scroll-lock {
-    overflow-y: hidden;
+  body {
+    height: 100vh;
   }
 }
+

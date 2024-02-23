@@ -50,7 +50,7 @@
   .tercero {
     width: 950px;
     margin-left: 10px;
-    margin-top: 150px;
+    margin-top: 120px;
   }
   
 }
@@ -70,5 +70,33 @@
 @media screen and (max-width: 650px) {
   .principal, .segundo, .tercero {
     width: 380px;
+  }
+
+  .segundo {
+    margin-top: -20px;
+  }
+
+  .tercero {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .principal, .segundo, .tercero {
+    width: 370px;
+  }
+
+  .principal {
+    margin-bottom: 20px;
+  }
+
+  .segundo {
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
+
+  .tercero {
+    margin-top: 100px;
+    height: 230px;
   }
 }

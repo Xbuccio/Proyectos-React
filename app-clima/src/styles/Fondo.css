@@ -10,7 +10,7 @@
 
 .video-background video {
   width: 100%;
-  height: 110vh;
+  height: 100%;
   object-fit: cover;
 }
 

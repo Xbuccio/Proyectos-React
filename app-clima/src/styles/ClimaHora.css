@@ -89,7 +89,6 @@
     height: 500px;
     width: 905px;
     flex-direction: column;
-    
   }
 
   .hora {
@@ -160,5 +159,25 @@
 
   .iconos-dia-hora {
     display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .carrusel {
+    
+  }
+
+  .container-hora {
+    width: 371px;
+    height: 320px;margin-left: -5px;
+  }
+
+  .tarjeta-hora, .hora-hora{
+    width: 365px;
+  }
+
+  .carrusel {
+    width: 375px;
   }
 }

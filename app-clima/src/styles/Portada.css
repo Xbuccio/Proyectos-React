@@ -60,7 +60,7 @@
   }
 
   .temperatura {
-   margin: 10px 0 30px -130px;
+   margin: 10px 0 30px -200px;
    width: auto;
   }
 
@@ -78,17 +78,21 @@
 
 @media screen and (max-width: 1000px) {
   .temperatura {
-    margin-left: 140px;
-    width: 400px;
+    margin-left: 50px;
+    width: 300px;
   }
 
 }
 
 @media screen and (max-width: 650px) {
   .temperatura {
+    margin: 0px 0 20px 150px;
     font-size: 60px;
-    margin-left: 250px;
-    margin-bottom: 20px;
+  }
+
+  .container-localidad h2 {
+    margin-bottom: -10px;
+    margin-top: 0;
   }
 
   .datos-extra {
