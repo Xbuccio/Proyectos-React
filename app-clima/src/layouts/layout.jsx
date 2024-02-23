@@ -17,7 +17,7 @@ function Layout() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseLugar = await fetch(`${API}find_places_prefix?text=gonzalezcatan&language=en&key=${APIKEY}`);
+        const responseLugar = await fetch('http://localhost:3001/find_places_prefix?text=gonzalezcatan&language=en&key=9pkepgi0tyko1024n23zab5b2c2iepyfwhpcafke')
         const dataLugar = await responseLugar.json();
         setLugar(dataLugar[0]); 
 
