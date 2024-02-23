@@ -156,7 +156,7 @@ function IconoCorrecto({ clima, num }) {
   return (
     <>
       {clima && (
-        <img src={iconSrc} alt="" />
+        <img src={iconSrc} alt="" className='icono-clima' />
       )}
     </>
   );

@@ -7,6 +7,7 @@
 }
 
 .principal {  
+  color: rgb(0, 0, 0);
   text-align: end;
   grid-column: 2 / 4;
   grid-row: 1 / 4;
@@ -22,4 +23,52 @@
   grid-row: 4 / 5;
   margin-left: -70px;
   margin-top: 80px;
+}
+
+@media screen and (max-width: 1450px) {
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+  
+  .principal {
+    width: 950px;
+    margin-bottom: 30px;
+  }
+  
+  .segundo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 950px;
+  }
+  
+  .tercero {
+    width: 950px;
+    margin-left: 10px;
+    margin-top: 150px;
+  }
+  
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .principal, .segundo, .tercero {
+    width: 600px;
+  }
+
+  .tercero {
+    margin-top: 120px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .principal, .segundo, .tercero {
+    width: 380px;
+  }
 }

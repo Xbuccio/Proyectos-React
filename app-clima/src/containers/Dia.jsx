@@ -3,16 +3,8 @@ import IconoCorrecto from '../components/IconoCorrecto';
 import Termometro from '../icons/termometro.png'
 import Gota from '../icons/gota.png'
 import Viento from '../icons/viento.png'
-
-const diasSemana = [
-  'Domingo',
-  'Lunes',
-  'Martes',
-  'Miércoles',
-  'Jueves',
-  'Viernes',
-  'Sábado'
-];
+import RecortePalabra from '../components/RecortePalabra';
+import { diasSemana } from '../components/ObtenerDia'
 
 function Dia({ clima, diaNum }) {
 
@@ -30,7 +22,7 @@ function Dia({ clima, diaNum }) {
   return (
     <div className='tarjeta-dia'>
       <div className='titulo-dia'>
-        <p>{nombreDiaSemana}</p>
+        <RecortePalabra nombreDiaSemana={nombreDiaSemana} />
         <IconoCorrecto clima={clima} num={climaDia?.icon} />
       </div>
       <div className='dia-individual'>

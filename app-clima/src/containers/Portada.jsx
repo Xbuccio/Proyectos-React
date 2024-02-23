@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import { diasSemana } from '../components/ObtenerDia'
 import "../styles/Portada.css"
+
 
 function Portada({ lugar, clima }) {
 
@@ -7,12 +9,25 @@ function Portada({ lugar, clima }) {
     return <div>Cargando...</div>;
   }
 
+  const climaDia = clima?.daily?.data[0]
+
+  const fecha = new Date(climaDia?.day);
+
+  let numeroDiaSemana = (fecha.getDay() + 2) % 7;
+  if (numeroDiaSemana === 0) {
+    numeroDiaSemana = 7;
+  }
+
+  const nombreDiaSemana = diasSemana[numeroDiaSemana];
+
   return (
     <>
       {lugar && (
         <>
-          <h2 className="localidad">{lugar?.name}, {lugar?.adm_area1}</h2>
-          <p style={{ fontSize: '20px' }}>{lugar?.timezone.split("/").slice(1, 2)}</p>
+          <div className='container-localidad'>
+            <h2 className="localidad">{lugar?.name}, {lugar?.adm_area1}</h2>
+            <p>{nombreDiaSemana}</p>
+          </div>
         </>
       )}
       {clima && (

@@ -54,3 +54,86 @@
 .iconos-dia {
   height: 35px;
 }
+
+@media screen and (max-width: 1450px) {
+  .container-dia {
+    display: flex;
+    margin-top: 0;
+    align-items: center;
+    width: 925px;
+  }
+
+  .tarjeta-dia {
+    margin: 10px;
+    width: 200px;
+  }
+
+  .iconos-dia {
+    display: none;
+  }
+
+  .min-max {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-dia {
+    width: 590px;
+    background-color: rgba(0, 0, 0, 0.422);
+    border-radius: 10px;
+  }
+
+  .tarjeta-dia {
+    border: none;
+    background: none;
+  }
+
+  .titulo-dia {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 15px;
+    margin: 0;
+  }
+
+  .titulo-dia p {
+    font-size: 25px;
+  }
+
+  .temp-dia {
+    font-size: 25px;
+  }
+
+  .dia-individual {
+    margin: 0;
+  }
+
+  .texto-mayusculas {
+    text-transform: uppercase;
+  }
+
+  .individual2 {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .container-dia {
+    width: 370px;
+  }
+
+  .titulo-dia p {
+    font-size: 20px;
+  }
+
+  .temp-dia {
+    font-size: 20px;
+  }
+
+  .icono-clima {
+    height: 40px;
+  }
+}

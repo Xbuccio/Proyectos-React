@@ -1,9 +1,10 @@
 .container-hora {
-  width: auto; /* Ancho fijo menos el padding horizontal */
-  overflow-x: auto; /* Desplazamiento horizontal */
-  white-space: nowrap;margin-top: -90px; /* Evita que las horas se envuelvan a la siguiente línea */
+  width: auto; 
+  overflow-x: auto; 
+  white-space: nowrap;
+  margin-top: -90px; 
 }
-
+ 
 .carrusel {
   display: inline-flex; /* Usamos flexbox en línea para que las horas no se envuelvan */
   gap: 10px; /* Espacio entre las horas */
@@ -33,7 +34,7 @@
   background-color: rgb(255, 255, 255);
   text-align: center;
   margin: 0;
-  border-radius: 10px 10px 0 0;
+  border-radius: 6px 6px 0 0;
   color: black;
 }
 
@@ -45,6 +46,9 @@
   margin-top: -8px;
 }
 
+.iconos-dia-hora {
+  height: 35px;
+}
 
 .container-hora::-webkit-scrollbar {
   width: 18px;
@@ -68,4 +72,93 @@
 
 .container-hora::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.5); /* Color del pulgar al pasar el mouse sobre él */
+}
+
+@media screen and (max-width: 1450px) {
+
+  .container-hora {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: visible;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .carrusel {
+    height: 500px;
+    width: 905px;
+    flex-direction: column;
+    
+  }
+
+  .hora {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .tarjeta-hora {
+    width: 900px;
+    flex-direction: row;
+    height: 100px;
+  }
+
+  .tarjeta-hora-1 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tarjeta-hora-2 {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .container-hora::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    opacity: 0; /* Inicialmente, hacemos la barra de desplazamiento transparente */
+    transition: opacity 0.3s; 
+    position: relative;/* Agregamos una transición suave para que aparezca y desaparezca gradualmente */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .container-hora {
+    width: 601px;
+  }
+
+  .tarjeta-hora {
+    height: 70px;
+  }
+
+  .tarjeta-hora, .hora-hora{
+    width: 595px;
+  }
+
+  .carrusel {
+    width: 605px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .container-hora {
+    width: 381px
+  }
+
+  .tarjeta-hora, .hora-hora{
+    width: 375px;
+  }
+
+  .carrusel {
+    width: 385px;
+  }
+
+  .iconos-dia-hora {
+    display: none;
+  }
 }

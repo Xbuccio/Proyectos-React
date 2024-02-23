@@ -61,10 +61,6 @@ function ClimaHora({ clima }) {
           <Hora clima={clima} horaNum={17} />
           <Hora clima={clima} horaNum={18} />
           <Hora clima={clima} horaNum={19} />
-          <Hora clima={clima} horaNum={20} />
-          <Hora clima={clima} horaNum={21} />
-          <Hora clima={clima} horaNum={22} />
-          <Hora clima={clima} horaNum={23} />
         </div>
       </div>
     </div>

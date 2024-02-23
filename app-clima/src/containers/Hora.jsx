@@ -19,15 +19,15 @@ function Hora({ clima, horaNum }) {
           </div>
           <div className="tarjeta-hora-2">
             <div className="tarjeta-flex">
-              <img src={Termometro} className='iconos-dia' alt="" />
+              <img src={Termometro} className='iconos-dia-hora' alt="" />
               <p>{dataClima?.temperature} °C</p>
             </div>
             <div className="tarjeta-flex">
-              <img src={Gota} className='iconos-dia' alt="" />
+              <img src={Gota} className='iconos-dia-hora' alt="" />
               <p>{dataClima?.precipitation?.total} mm</p>
             </div>
             <div className="tarjeta-flex">
-              <img src={Viento} className='iconos-dia' alt="" />
+              <img src={Viento} className='iconos-dia-hora' alt="" />
               <p>{dataClima?.wind?.speed}km/h</p>
             </div>
           </div>

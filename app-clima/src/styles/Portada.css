@@ -12,7 +12,10 @@
   font-size: 100px;
   margin-top: 50px;
   margin-bottom: 45px;
-  
+  text-shadow: -1px -1px 0 rgb(189, 189, 189),  
+                1px -1px 0 rgb(189, 189, 189),
+               -1px  1px 0 rgb(189, 189, 189),
+                1px  1px 0 rgb(189, 189, 189);
 }
 
 .container-datos {
@@ -23,10 +26,6 @@
   font-size: 22px;
 }
 
-.datos-extra p {
-  background-color: rgba(0, 0, 0, 0.555);
-
-}
 
 .min-max-portada {
   display: flex;
@@ -36,6 +35,67 @@
 }
 
 .min-max-portada p {
-  margin: 0;  background-color: rgba(0, 0, 0, 0.555);
+  margin: 0;  
+}
 
+.container-localidad p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1450px) {
+
+  .container-localidad {
+    text-align: start;
+    margin-left: 20px;
+  }
+
+  .container-localidad p {
+    font-size: 25px;
+  }
+
+  .container-temperatura {
+    flex-direction: column; 
+    text-align: start;
+    width: 50%;
+  }
+
+  .temperatura {
+   margin: 10px 0 30px -130px;
+   width: auto;
+  }
+
+  .container-datos {
+    width: 50%;
+    position: relative;
+    text-align: start;
+    margin-left: 25px;
+  }
+
+  .min-max-portada {
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .temperatura {
+    margin-left: 140px;
+    width: 400px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .temperatura {
+    font-size: 60px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+  }
+
+  .datos-extra {
+    width: 300px;
+  }
+
+  .min-max-portada {
+    font-size: 20px;
+  }
 }
