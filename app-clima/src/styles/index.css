@@ -40,3 +40,9 @@ p {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) { /* Aplica solo en dispositivos móviles */
+  body.touch-scroll-lock {
+    overflow-y: hidden;
+  }
+}
