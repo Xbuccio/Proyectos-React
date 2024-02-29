@@ -1,5 +1,6 @@
 .localidad {
   font-size: 25px;
+  font-weight: 700;
 }
 
 .container-temperatura {
@@ -10,16 +11,14 @@
 
 .temperatura {
   font-size: 100px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 45px;
-  text-shadow: -1px -1px 0 rgb(189, 189, 189),  
-                1px -1px 0 rgb(189, 189, 189),
-               -1px  1px 0 rgb(189, 189, 189),
-                1px  1px 0 rgb(189, 189, 189);
+  font-weight: 300;
 }
 
 .container-datos {
   font-size: 30px;
+  font-weight: 700;
 }
 
 .datos-extra {
@@ -40,9 +39,14 @@
 
 .container-localidad p {
   font-size: 20px;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1450px) {
+
+  .localidad {
+    font-weight: 400;
+  }
 
   .container-localidad {
     text-align: start;
@@ -51,6 +55,8 @@
 
   .container-localidad p {
     font-size: 25px;
+    font-weight: 400;
+
   }
 
   .container-temperatura {
@@ -60,8 +66,9 @@
   }
 
   .temperatura {
-   margin: 10px 0 30px -200px;
+   margin: 10px 0 30px -125px;
    width: auto;
+   font-weight: 400;
   }
 
   .container-datos {
@@ -69,17 +76,21 @@
     position: relative;
     text-align: start;
     margin-left: 25px;
+    font-weight: 400;
+
   }
 
   .min-max-portada {
     justify-content: start;
+    font-weight: 400;
+
   }
 }
 
 @media screen and (max-width: 1000px) {
   .temperatura {
-    margin-left: 50px;
-    width: 300px;
+    margin-left: 125px;
+    width: 400px;
   }
 
 }
@@ -88,6 +99,7 @@
   .temperatura {
     margin: 0px 0 10px 150px;
     font-size: 60px;
+    width: 300px;
   }
 
   .container-localidad h2 {

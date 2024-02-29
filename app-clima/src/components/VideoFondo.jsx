@@ -64,11 +64,12 @@ function VideoFondo({ clima }) {
     setVideoFondo(fondoSeleccionado);
   }, [clima]);
 
+
   return (
     <div className="video-background">
       {clima && videoFondo && (
         <video autoPlay loop muted>
-          <source src={videoFondo} type="video/mp4" />
+          <source src={videoFondo} type="video/mp4" /> 
         </video>
       )}
     </div>
@@ -80,3 +81,4 @@ VideoFondo.propTypes = {
 };
 
 export default VideoFondo;
+

@@ -4,10 +4,10 @@ nav {
   gap: 20px;
   align-items: center;
   justify-content: end;
-  margin-right: 30px;
 }
 
 .icon-nav {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
+  border-radius: 10px;
 }

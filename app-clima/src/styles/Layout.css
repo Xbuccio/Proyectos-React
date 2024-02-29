@@ -7,7 +7,6 @@
 }
 
 .principal {  
-  color: rgb(0, 0, 0);
   text-align: end;
   grid-column: 2 / 4;
   grid-row: 1 / 4;
@@ -23,6 +22,14 @@
   grid-row: 4 / 5;
   margin-left: -70px;
   margin-top: 80px;
+}
+
+.letra-blanco {
+  color: white;
+}
+
+.letra-negro {
+  color: black;
 }
 
 @media screen and (max-width: 1450px) {
