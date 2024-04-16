@@ -4,9 +4,7 @@ import "../styles/ClimaDia.css"
 
 function ClimaDia ({ clima, color }) {
 
-  if (!clima) {
-    return <div>Cargando...</div>;
-  }
+  
 
   return (
     <div className="container-dia">

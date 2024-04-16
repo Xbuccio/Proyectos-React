@@ -41,8 +41,8 @@ function ClimaHora({ clima, color }) {
         onMouseUp={handleMouseUp}
       >
         <div className="carrusel">
-          <Hora clima={clima} color={color} horaNum={0} />
-          <Hora clima={clima} color={color} horaNum={1} />
+          <Hora clima={clima} horaNum={0} color={color} />
+          <Hora clima={clima} horaNum={1} color={color} />
           <Hora clima={clima} horaNum={2} color={color} />
           <Hora clima={clima} horaNum={3} color={color} />
           <Hora clima={clima} horaNum={4} color={color} />

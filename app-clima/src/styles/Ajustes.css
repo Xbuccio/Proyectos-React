@@ -1,0 +1,25 @@
+.ajustes-contain {
+  display: none; /* Inicialmente oculto */
+  transition: opacity 0.5s ease-in-out; /* Transición suave para la animación */
+}
+
+.ajustes-contain.show {
+  display: block; /* Mostrar cuando la clase 'show' está presente */
+  opacity: 1; /* Hacer visible */
+  position: absolute;
+  background-color: rgb(34, 34, 34);
+  height: 100vh;
+  width: 350px;
+  top: 0px;
+  color: azure;
+  display: flex;
+  flex-direction: column;
+}
+
+.ajustes-contain picture {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
