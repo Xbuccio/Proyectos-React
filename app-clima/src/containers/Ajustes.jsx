@@ -2,7 +2,9 @@ import Flecha from '../icons/flecha.png'
 import PropTypes from 'prop-types';
 import '../styles/Ajustes.css'
 
+
 function Ajustes({ ajustesNav, setAjustesNav }) {
+
 
   const handleClick = () => {
     setAjustesNav(false);

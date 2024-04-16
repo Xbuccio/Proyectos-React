@@ -1,6 +1,5 @@
 .localidad {
-  font-size: 25px;
-  font-weight: 700;
+  font-size: 28px;
 }
 
 .container-temperatura {
@@ -13,18 +12,16 @@
   font-size: 100px;
   margin-top: 20px;
   margin-bottom: 45px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .container-datos {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 35px;
 }
 
 .datos-extra {
   font-size: 22px;
 }
-
 
 .min-max-portada {
   display: flex;
@@ -38,8 +35,7 @@
 }
 
 .container-localidad p {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 23px;
 }
 
 @media screen and (max-width: 1450px) {
@@ -55,7 +51,7 @@
 
   .container-localidad p {
     font-size: 25px;
-    font-weight: 400;
+ 
 
   }
 
@@ -77,7 +73,6 @@
     text-align: start;
     margin-left: 25px;
     font-weight: 400;
-
   }
 
   .min-max-portada {
