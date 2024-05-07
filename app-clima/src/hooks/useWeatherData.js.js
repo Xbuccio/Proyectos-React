@@ -10,7 +10,6 @@ function useWeatherData(lugar) {
   useEffect(() => {
     const fetchData = async () => {
       if (!lugar) return;
-
       try {
         const responseClima = await fetch(
           `${API}point?place_id=${lugar?.place_id}&sections=all&timezone=UTC&language=en&units=metric&key=${APIKEY}`

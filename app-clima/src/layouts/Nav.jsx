@@ -4,23 +4,26 @@ import ajuste from '../icons/ajuste.png'
 import "../styles/Nav.css"
 import Ajustes from '../containers/Ajustes'
 
-function Nav () {
+function Nav ({ setAjustesNav, setUbicacion }) {
 
-  const [ajustesNav, setAjustesNav] = useState(false)
+  const [ajustesNav, setAjustesNavLocal] = useState(false);
 
   const handleClick = () => {
-    setAjustesNav(!ajustesNav)
+    setAjustesNavLocal(!ajustesNav); // Usamos setAjustesNavLocal aquí
   }
 
   return (
-    <nav>
+    <nav> 
+      {/** 
+       * 
       <img src={actualizar} alt="" className="icon-nav" />
       <img src={ajuste} alt="" className="icon-nav" onClick={handleClick}/>
       {ajustesNav ? 
-        <Ajustes ajustesNav={ajustesNav} setAjustesNav={setAjustesNav}/>
-          : 
+        <Ajustes ajustesNav={ajustesNav} setAjustesNav={setAjustesNav} setUbicacion={setUbicacion} />
+        : 
         <></>
       }
+      */}
     </nav>
   )
 }

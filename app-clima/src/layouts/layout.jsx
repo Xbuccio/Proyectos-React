@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ClimaDia from "../containers/Clima-dia";
 import ClimaHora from "../containers/Clima-hora";
 import Portada from "../containers/Portada";
@@ -7,11 +8,22 @@ import useLocation from "../hooks/useLocation";
 import useWeatherData from "../hooks/useWeatherData.js";
 import "../styles/Layout.css";
 
-function Layout() {
+function Layout({ ajustesNav, ubicacion, setUbicacion }) {
   const lugar = useLocation();
-  const { clima, color } = useWeatherData(lugar);
 
-  if (!clima) {
+  // Si ajustesNav está abierto, usa la ubicación proporcionada en los ajustes
+  const ubicacionActual = ajustesNav ? ubicacion : lugar;
+
+  const { clima, color } = useWeatherData(ubicacionActual);
+
+  useEffect(() => {
+    // Si la ubicación del usuario no está disponible, actualizamos la ubicación
+    if (!lugar && !ubicacion && setUbicacion) {
+      setUbicacion(null); // Esto puede ser cualquier valor predeterminado o un mensaje de error
+    }
+  }, [lugar, ubicacion, setUbicacion]);
+
+  if (!clima || !ubicacionActual) {
     return <div className="contain-loader"><Loader/></div>;
   }
 
@@ -19,7 +31,7 @@ function Layout() {
     <div className="layout">
       <VideoFondo clima={clima}/>
       <section className={`principal ${color ? 'letra-blanco' : 'letra-negro'}`}>
-        <Portada lugar={lugar} clima={clima} />
+        <Portada lugar={ubicacionActual} clima={clima} />
       </section>
       <section className="segundo">
         <ClimaDia clima={clima} color={color} />
